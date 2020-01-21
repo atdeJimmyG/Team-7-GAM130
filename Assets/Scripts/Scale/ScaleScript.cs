@@ -9,11 +9,11 @@ public class ScaleScript : MonoBehaviour
     public float scaleValue = 0.00f;
     int counter = 0;
     private float maxSize;
-    private float cubeScale = Cube.transform.localScale;
+    //private float cubeScale = Cube.transform.localScale;
 
     void Update()
     {
-        maxSize = Mathf.Clamp(cubeScale, -0.25f, 0.25f);
+        //maxSize = Mathf.Clamp(cubeScale, -0.25f, 0.25f);
         if (Input.GetAxis("Mouse ScrollWheel") > 0f) { // forward
             scaleValue = 0.01f;
         }
