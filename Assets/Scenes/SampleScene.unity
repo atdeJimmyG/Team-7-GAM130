@@ -118,7 +118,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28004
+  m_Name: pb_Mesh32856
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -1763,6 +1763,7 @@ GameObject:
   - component: {fileID: 398266832}
   - component: {fileID: 398266831}
   - component: {fileID: 398266830}
+  - component: {fileID: 398266836}
   m_Layer: 0
   m_Name: Pipe1
   m_TagString: Fire
@@ -2970,6 +2971,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 0}
+--- !u!114 &398266836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398266829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3705807e8b9cdb442a4daa0105c21224, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &475805817
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6234,6 +6247,35 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1541108806 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100002, guid: 5e9e851c0e142814dac026a256ba2ac0,
+    type: 3}
+  m_PrefabInstance: {fileID: 304801614}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1541108807 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400002, guid: 5e9e851c0e142814dac026a256ba2ac0,
+    type: 3}
+  m_PrefabInstance: {fileID: 304801614}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1541108808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541108806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59623f43ae4277943861ebf05920631a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: {fileID: 1541108807}
+  fireball: {fileID: 1786035138422053335, guid: 5bd34f78a4070684b83489a468900185,
+    type: 3}
+  speed: 500
+  coolDownTime: 0.2
 --- !u!1 &1632584081
 GameObject:
   m_ObjectHideFlags: 0

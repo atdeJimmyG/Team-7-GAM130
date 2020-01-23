@@ -9,7 +9,7 @@ public class Fireball : MonoBehaviour
     private GameObject fireball;
 
     [SerializeField]
-    private float speed = 1f;
+    private float speed = 500f;
 
     [SerializeField]
     private float coolDownTime = 0.2f;
@@ -33,10 +33,5 @@ public class Fireball : MonoBehaviour
     {
         GameObject firedBall = Instantiate(fireball, position.position, position.rotation);
         firedBall.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * speed);
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        Destroy(gameObject);
     }
 }
