@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5744368301835432369}
   - component: {fileID: 3757673071411434634}
   - component: {fileID: 3021631605259602809}
+  - component: {fileID: 1385909778343267701}
   m_Layer: 1
   m_Name: Fireball
   m_TagString: Fire
@@ -121,3 +122,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c0ba4f78972c994bacee020453dfa5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!108 &1385909778343267701
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786035138422053335}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 2
+  m_Color: {r: 1, g: 0.45336083, b: 0, a: 1}
+  m_Intensity: 2
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
