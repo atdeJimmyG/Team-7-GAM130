@@ -25,7 +25,10 @@ public class ScaleScript : MonoBehaviour {
 
             if (Physics.Raycast(ray, out hit)) {
                 Debug.Log(hit.transform.name);
-                Cube.transform.localScale += new Vector3(scaleValue, scaleValue, scaleValue);
+                if(hit.transform.tag == "Scale") {
+                    hit.transform.localScale += new Vector3(scaleValue, scaleValue, scaleValue);
+
+                }
             }
         }
     }

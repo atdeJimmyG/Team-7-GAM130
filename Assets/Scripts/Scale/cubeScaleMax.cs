@@ -17,8 +17,11 @@ public class cubeScaleMax : MonoBehaviour
     void FixedUpdate() {
 
         float actualLocalScaleMagnitude = transform.localScale.magnitude;
-         if (Input.GetMouseButton(0) && (Input.GetAxis("Mouse ScrollWheel")) != 0f && (actualLocalScaleMagnitude > maxlocalScaleMagnitude)) {
-            transform.localScale += new Vector3(-0.5f, -0.5f, -0.5f);
+        if (transform.localScale.x > 2) {
+            transform.localScale = new Vector3(2f, 2f, 2f);
         }
+        /*if (Input.GetMouseButton(0) && (Input.GetAxis("Mouse ScrollWheel")) != 0f && (actualLocalScaleMagnitude > maxlocalScaleMagnitude)) {
+           transform.localScale = new Vector3(2, 2, 2);
+       }*/
     }
 }
