@@ -7037,9 +7037,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 435753075}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59623f43ae4277943861ebf05920631a, type: 3}
+  m_Script: {fileID: 11500000, guid: 04a7d9659f0cf0344abe8e18842afb89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  position: {fileID: 435753077}
+  fireball: {fileID: 1786035138422053335, guid: 5bd34f78a4070684b83489a468900185,
+    type: 3}
+  speed: 500
+  coolDownTime: 0.2
+--- !u!4 &435753077 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400002, guid: 5e9e851c0e142814dac026a256ba2ac0,
+    type: 3}
+  m_PrefabInstance: {fileID: 435753073}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &440657224
 Mesh:
   m_ObjectHideFlags: 0
