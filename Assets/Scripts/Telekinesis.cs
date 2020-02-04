@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickUpObject : MonoBehaviour
+public class Telekinesis : MonoBehaviour
 {
     public Camera cam;
     public float interactDist;
@@ -21,6 +21,8 @@ public class PickUpObject : MonoBehaviour
 
     private bool hasObject = false;
 
+    private bool shouldCharge = false;
+
 
 
     private void Start()
@@ -38,12 +40,13 @@ public class PickUpObject : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1) && hasObject)
         {
-            throwForce += 10f;
-            Debug.Log(throwForce);
+            shouldCharge = true;
+            updateForce();
         }
 
         if (Input.GetMouseButtonUp(1) && hasObject)
         {
+            shouldCharge = false;
             shootObject();
         }
 
@@ -77,14 +80,18 @@ public class PickUpObject : MonoBehaviour
         objectIHave.transform.position = Vector3.Lerp(objectIHave.transform.position, holdPos.position, attactspeed * Time.deltaTime);
     }
 
+    // Drops the held object
     private void dropObject()
     {
         objectRB.constraints = RigidbodyConstraints.None;
+        objectRB.useGravity = true;
         objectIHave.transform.parent = null;
         objectIHave = null;
         hasObject = false;
     }
 
+    // Forces the held object forward
+    // How far is based on throw force
     private void shootObject()
     {
         throwForce = Mathf.Clamp(throwForce, minThrowForce, maxThrowForce);
@@ -93,6 +100,7 @@ public class PickUpObject : MonoBehaviour
         dropObject();
     }
 
+    // When called do a ray trace froward and if hits sets object as held object.
     private void doRay()
     {
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
@@ -103,13 +111,26 @@ public class PickUpObject : MonoBehaviour
             if (hit.collider.CompareTag("Block"))
             {
                 objectIHave = hit.collider.gameObject;
-                objectIHave.transform.SetParent(holdPos);
+                //objectIHave.transform.SetParent(holdPos);
 
                 objectRB = objectIHave.GetComponent<Rigidbody>();
-                objectRB.constraints = RigidbodyConstraints.FreezeAll;
+                objectRB.constraints = RigidbodyConstraints.FreezeRotation;
+                objectRB.useGravity = false;
 
                 hasObject = true;
             }
         }
+    }
+
+    // when called increse the throw force.
+    private void updateForce()
+    {
+        if (shouldCharge)
+        {
+            throwForce += 1;
+            Debug.Log(throwForce);
+            Invoke("updateForce", .1f);
+        }
+
     }
 }
