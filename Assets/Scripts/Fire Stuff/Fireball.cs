@@ -17,7 +17,7 @@ public class Fireball : MonoBehaviour
 
     //"coolDownTime" is the minimum time between the firing of each fireball
     [SerializeField]
-    private float coolDownTime = 0.2f;
+    private float coolDownTime = 1f;
 
     //"nextFireTime" is the time since the script began running when the next fireball can be launched
     private float nextFireTime = 0;

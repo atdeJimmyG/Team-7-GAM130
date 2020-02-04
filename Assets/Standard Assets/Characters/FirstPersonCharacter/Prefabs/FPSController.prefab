@@ -306,7 +306,7 @@ MonoBehaviour:
   fireball: {fileID: 1786035138422053335, guid: 5bd34f78a4070684b83489a468900185,
     type: 3}
   speed: 5
-  coolDownTime: 0.2
+  coolDownTime: 1
 --- !u!1 &100002
 GameObject:
   m_ObjectHideFlags: 0
