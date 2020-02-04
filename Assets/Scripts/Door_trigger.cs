@@ -4,56 +4,41 @@ using UnityEngine;
 
 public class Door_trigger : MonoBehaviour
 {
-    public GameObject door;
+    public Animator doorAnimationController;
+    public float animSpeed = 1f;
+    public bool oneUse = false;
 
-    public Transform startPos;
-    public Transform endPos;
-    public float speed = 1f;
-
-    float time = .5f;
+    // You should only need to change this if you have a differnt parameter name in your animatior
+    public string stateParameterName = "OpenDoor";
+    public string speedParameterName = "AnimSpeed";
 
     bool isOpened = false;
 
+    // On starts sets the animation play rate to desired speed
+    private void Start()
+    {
+        doorAnimationController.SetFloat(speedParameterName, animSpeed);
+    }
+
+
+    // When something enters the collider plays the open animation
     void OnTriggerEnter(Collider col)
     {
         if (!isOpened)
         {
-            StartCoroutine(OpenDoor());
-        }
-    }
-
-    IEnumerator OpenDoor()
-    {
-        float i = 0.0f;
-        float rate = (1.0f / time) * speed;
-        while (i < 1.0f)
-        {
-            i += Time.deltaTime * rate;
-            Debug.Log(i);
-            door.transform.position = Vector3.Lerp(door.transform.position, endPos.position, i);
             isOpened = true;
-            yield return new WaitForEndOfFrame();
+            doorAnimationController.SetBool(stateParameterName, true);
         }
     }
 
+
+    // When something leaves the collider plays the close animation
     void OnTriggerExit(Collider col)
     {
-        if (isOpened)
+        if (isOpened && !oneUse)
         {
-            StartCoroutine(CloseDoor());
-        }
-    }
-
-    IEnumerator CloseDoor()
-    {
-        float i = 0.0f;
-        float rate = (1.0f / time) * speed;
-        while (i < 1.0f)
-        {
-            i += Time.deltaTime * rate;
-            door.transform.position = Vector3.Lerp(door.transform.position, startPos.position, i);
             isOpened = false;
-            yield return new WaitForEndOfFrame();
+            doorAnimationController.SetBool(stateParameterName, false);
         }
     }
 }
