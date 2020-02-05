@@ -295,6 +295,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scenefader: {fileID: 478451883}
   NextLevel: Telekinesis
+  text: {fileID: 431546513}
+  Menu: {fileID: 239692809}
 --- !u!1001 &332077790
 PrefabInstance:
   m_ObjectHideFlags: 0

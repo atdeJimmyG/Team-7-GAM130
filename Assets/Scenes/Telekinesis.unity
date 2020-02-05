@@ -35116,6 +35116,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FPSController
       objectReference: {fileID: 0}
+    - target: {fileID: 680848125347603526, guid: c8a2aeb392650594680b70f9f322b85f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 680848125347603524, guid: c8a2aeb392650594680b70f9f322b85f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -35195,11 +35200,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_JumpSpeed
       value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 680848125347603526, guid: c8a2aeb392650594680b70f9f322b85f,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8a2aeb392650594680b70f9f322b85f, type: 3}
@@ -40480,7 +40480,7 @@ PrefabInstance:
     - target: {fileID: 7068777110294426818, guid: 0dac79fd197ffb34e840b666f34115ae,
         type: 3}
       propertyPath: NextLevelIndex
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0dac79fd197ffb34e840b666f34115ae, type: 3}
