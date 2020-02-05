@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scale.unity
     guid: f021acf6029a2e34b99514253dfac234
+  - enabled: 1
+    path: Assets/Scenes/MultiSpellTest.unity
+    guid: cef1cede6ae781b4796a78ac221fc79d
   m_configObjects: {}

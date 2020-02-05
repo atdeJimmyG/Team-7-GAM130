@@ -32,6 +32,11 @@ public class SceneFader : MonoBehaviour
         StartCoroutine(fadeOut(scene));
     }
 
+    public void fadetoindex(int index)
+    {
+        //Added soon
+    }
+
     IEnumerator fadeOut(string scene)
     {
         float t = 0f;
