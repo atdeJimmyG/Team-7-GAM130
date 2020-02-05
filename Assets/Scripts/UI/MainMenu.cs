@@ -23,6 +23,6 @@ public class MainMenu : MonoBehaviour
 
     public void OpenLevelSelect()
     {
-        scenefader.fadeTo("");
+        scenefader.fadeTo("LevelSelect");
     }
 }

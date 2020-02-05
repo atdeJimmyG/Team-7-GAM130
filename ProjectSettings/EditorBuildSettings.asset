@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 858202720e547eb4aa199b09b3a0c122
   - enabled: 1
+    path: Assets/Scenes/LevelSelect.unity
+    guid: 62b85c1d2964599488589e9855e57b30
+  - enabled: 1
     path: Assets/Scenes/Telekinesis.unity
     guid: ff79062a812a8e2448982b2fadee731a
   - enabled: 1
