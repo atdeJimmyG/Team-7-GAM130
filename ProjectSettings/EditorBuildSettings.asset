@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 858202720e547eb4aa199b09b3a0c122
+  - enabled: 1
+    path: Assets/Scenes/Telekinesis.unity
+    guid: ff79062a812a8e2448982b2fadee731a
+  - enabled: 1
+    path: Assets/Scenes/Fire.unity
+    guid: 02ebfa9a4def1304e90162a7e4d007dd
+  - enabled: 1
+    path: Assets/Scenes/Scale.unity
+    guid: f021acf6029a2e34b99514253dfac234
   m_configObjects: {}
