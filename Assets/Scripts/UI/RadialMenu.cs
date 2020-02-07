@@ -18,6 +18,14 @@ public class RadialMenu : MonoBehaviour
     public AnimationCurve curve;
     private bool open = false;
     private List<string> Spells = new List<string>();
+    private Telekinesis Telekinesis;
+    private Fireball Fire;
+
+    private void Start()
+    {
+        Telekinesis = Player.GetComponent<Telekinesis>();
+        Fire = Player.GetComponent<Fireball>();
+    }
 
     public void Open()
     {
@@ -80,13 +88,39 @@ public class RadialMenu : MonoBehaviour
         Buttons[CurrentMenuItem].SenceImage.color = Buttons[CurrentMenuItem].PressedColor;
         //Debug.Log(CurrentMenuItem);
         //Debug.Log(CurrentSpell);
-        if (CurrentMenuItem == 0 && CurrentSpell == "Telekinesis")
+        if (CurrentMenuItem == 0 && CurrentSpell == "Telekinesis" && Player.GetComponent<Telekinesis>() != null)
         {
-            Debug.Log("Current Spell Is Telekinesis");
+            if (Telekinesis.enabled)
+            {
+                Debug.Log("Current Spell Is Telekinesis");
+            }
+            else
+            {
+                Debug.Log("Telekinesis is now you current spell");
+                Fire.enabled = false;
+                Telekinesis.enabled = true;
+            }
         }
-        if (CurrentMenuItem == 1 && CurrentSpell == "Fireball")
+        if((CurrentMenuItem == 1 && CurrentSpell == "Fireball" && Player.GetComponent<Telekinesis>() == null))
         {
-            Debug.Log("Current Spell Is Fire");
+            Debug.Log("You Don't Have Telekinesis");
+        }
+        if (CurrentMenuItem == 1 && CurrentSpell == "Fireball" && Player.GetComponent<Fireball>() != null)
+        {
+            if (Fire.enabled)
+            {
+                Debug.Log("Current Spell Is fire");
+            }
+            else
+            {
+                Debug.Log("Fire is now you current spell");
+                Telekinesis.enabled = false;
+                Fire.enabled = true;
+            }
+        }
+        if (CurrentMenuItem == 1 && CurrentSpell == "Fireball" && Player.GetComponent<Fireball>() == null)
+        {
+            Debug.Log("You Don't Have Fire");
         }
     }
 
