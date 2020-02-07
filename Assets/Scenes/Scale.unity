@@ -1841,7 +1841,7 @@ GameObject:
   - component: {fileID: 391531895}
   m_Layer: 0
   m_Name: Stairs
-  m_TagString: Untagged
+  m_TagString: Scale
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7212,6 +7212,42 @@ MonoBehaviour:
   minThrowForce: 2
   maxThrowForce: 4
   Player: {fileID: 0}
+--- !u!114 &397284902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397284894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd08ffbce9c26844993fa940c446b3c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cube: {fileID: 0}
+  scaleValue: 0
+--- !u!114 &397284903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397284894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ad989fd88c9b0c4c82cd6ad3f6505ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 397284894}
+  Buttons: []
+  MenuItems: 0
+  CurrentMenuItem: 0
+  curve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!43 &484969015
 Mesh:
   m_ObjectHideFlags: 0
@@ -7896,7 +7932,7 @@ GameObject:
   - component: {fileID: 677025171}
   m_Layer: 0
   m_Name: Bridge
-  m_TagString: Untagged
+  m_TagString: Scale
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9364,7 +9400,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh23028
+  m_Name: pb_Mesh26066
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -11232,7 +11268,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-81378
+  m_Name: pb_Mesh-21252
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -11398,6 +11434,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EndOfLevel
       objectReference: {fileID: 0}
+    - target: {fileID: 7068777110294426819, guid: 0dac79fd197ffb34e840b666f34115ae,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7068777110294426820, guid: 0dac79fd197ffb34e840b666f34115ae,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11476,7 +11517,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-81376
+  m_Name: pb_Mesh-21250
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -13159,7 +13200,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh23058
+  m_Name: pb_Mesh26098
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -13831,6 +13872,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MetalBoxScale
       objectReference: {fileID: 0}
+    - target: {fileID: 2023570739502854812, guid: a02dd911db11a9743ae23c4a6c60d2a5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Scale
+      objectReference: {fileID: 0}
     - target: {fileID: 2023570739502854808, guid: a02dd911db11a9743ae23c4a6c60d2a5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13904,6 +13950,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Level End Pad
+      objectReference: {fileID: 0}
+    - target: {fileID: 131150012367116317, guid: 39d1b88d7147ad149808fa5b20f2a76f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3881648341902580800, guid: 39d1b88d7147ad149808fa5b20f2a76f,
         type: 3}
