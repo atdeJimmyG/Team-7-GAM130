@@ -251,6 +251,7 @@ GameObject:
   m_Component:
   - component: {fileID: 239692810}
   - component: {fileID: 239692811}
+  - component: {fileID: 239692812}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -297,6 +298,27 @@ MonoBehaviour:
   NextLevel: Telekinesis
   text: {fileID: 431546513}
   Menu: {fileID: 239692809}
+--- !u!114 &239692812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239692809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ad989fd88c9b0c4c82cd6ad3f6505ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Buttons: []
+  MenuItems: 0
+  CurrentMenuItem: 0
+  curve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &332077790
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -308,6 +330,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SceneFader
+      objectReference: {fileID: 0}
+    - target: {fileID: 5303865494177523558, guid: e1ff94702516d314a8e0129da50c37a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5303865494177523553, guid: e1ff94702516d314a8e0129da50c37a0,
         type: 3}

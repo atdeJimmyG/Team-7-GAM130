@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
+using UnityEngine.UI;
 
 namespace UnityStandardAssets.Characters.FirstPerson
 {
@@ -41,6 +42,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
+        private RadialMenu RadialMenu;
+        public Canvas RadialMenuCanvas;
+        private bool UImode = false;
 
         // Use this for initialization
         private void Start()
@@ -55,6 +59,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
+            RadialMenuCanvas.enabled = false;
+            RadialMenu = GetComponent<RadialMenu>();
         }
 
 
@@ -81,6 +87,20 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
 
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
+
+            if (Input.GetKeyDown(KeyCode.Q) && UImode == false)
+            {
+                RadialMenuCanvas.enabled = true;
+                RadialMenu.Open();
+                UImode = true;
+            }
+
+            if (Input.GetKeyUp(KeyCode.Q) && UImode == true)
+            {
+                RadialMenuCanvas.enabled = false;
+                RadialMenu.Close();
+                UImode = false;
+            }
         }
 
 
@@ -129,8 +149,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             ProgressStepCycle(speed);
             UpdateCameraPosition(speed);
-
-            m_MouseLook.UpdateCursorLock();
         }
 
 
@@ -188,7 +206,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 m_Camera.transform.localPosition =
                     m_HeadBob.DoHeadBob(m_CharacterController.velocity.magnitude +
-                                      (speed*(m_IsWalking ? 1f : m_RunstepLenghten)));
+                                      (speed * (m_IsWalking ? 1f : m_RunstepLenghten)));
                 newCameraPosition = m_Camera.transform.localPosition;
                 newCameraPosition.y = m_Camera.transform.localPosition.y - m_JumpBob.Offset();
             }
@@ -236,7 +254,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void RotateView()
         {
-            m_MouseLook.LookRotation (transform, m_Camera.transform);
+            if (!UImode)
+            {
+                m_MouseLook.LookRotation(transform, m_Camera.transform);
+            }
         }
 
 
