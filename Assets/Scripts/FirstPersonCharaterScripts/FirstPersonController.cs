@@ -42,9 +42,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
+
         private RadialMenu RadialMenu;
         public Canvas RadialMenuCanvas;
-        private bool UImode = false;
+        public bool UImode = false;
 
         // Use this for initialization
         private void Start()

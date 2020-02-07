@@ -7103,6 +7103,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.7
       objectReference: {fileID: 0}
+    - target: {fileID: 5380142500369512157, guid: 5e9e851c0e142814dac026a256ba2ac0,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1956326572}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
 --- !u!1 &436836113
@@ -29830,6 +29835,19 @@ MonoBehaviour:
   attactspeed: 10
   minThrowForce: 2
   maxThrowForce: 20
+  Player: {fileID: 1956326572}
+--- !u!114 &1956326572 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0,
+    type: 3}
+  m_PrefabInstance: {fileID: 435753073}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956326567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05ec5cf00ca181d45a42ba1870e148c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1956326575
 MonoBehaviour:
   m_ObjectHideFlags: 0

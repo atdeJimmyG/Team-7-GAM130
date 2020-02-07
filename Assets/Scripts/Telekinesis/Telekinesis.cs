@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class Telekinesis : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class Telekinesis : MonoBehaviour
 
     private bool shouldCharge = false;
 
-
+    public FirstPersonController Player; 
 
     private void Start()
     {
@@ -33,38 +34,40 @@ public class Telekinesis : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !hasObject)
+        bool InMenu = Player.UImode;
+        
+        if (!InMenu)
         {
-            doRay();
-        }
-
-        if (Input.GetMouseButtonDown(1) && hasObject)
-        {
-            shouldCharge = true;
-            updateForce();
-        }
-
-        if (Input.GetMouseButtonUp(1) && hasObject)
-        {
-            shouldCharge = false;
-            shootObject();
-        }
-
-        if (Input.GetKeyDown(KeyCode.E) && hasObject)
-        {
-            dropObject();
-        }
-
-        if (hasObject)
-        {
-            if (checkDist() > -1f)
+            if (Input.GetMouseButtonDown(0) && !hasObject)
             {
-                moveObjectToPos();
+                doRay();
             }
-        }
 
+            if (Input.GetMouseButtonDown(1) && hasObject)
+            {
+                shouldCharge = true;
+                updateForce();
+            }
 
+            if (Input.GetMouseButtonUp(1) && hasObject)
+            {
+                shouldCharge = false;
+                shootObject();
+            }
 
+            if (Input.GetKeyDown(KeyCode.E) && hasObject)
+            {
+                dropObject();
+            }
+
+            if (hasObject)
+            {
+                if (checkDist() > -1f)
+                {
+                    moveObjectToPos();
+                }
+            }
+        }        
     }
 
     //---------Fuction
