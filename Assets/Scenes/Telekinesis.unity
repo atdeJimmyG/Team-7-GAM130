@@ -7888,6 +7888,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 680848125341874822}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &742976451 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 680848125358656900, guid: c8a2aeb392650594680b70f9f322b85f,
+    type: 3}
+  m_PrefabInstance: {fileID: 680848125341874822}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742976447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05ec5cf00ca181d45a42ba1870e148c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &742976454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35583,6 +35595,11 @@ PrefabInstance:
       propertyPath: maxThrowForce
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 680848124891606532, guid: c8a2aeb392650594680b70f9f322b85f,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 742976451}
     - target: {fileID: 680848125358656900, guid: c8a2aeb392650594680b70f9f322b85f,
         type: 3}
       propertyPath: m_JumpSpeed

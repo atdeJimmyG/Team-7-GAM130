@@ -7211,6 +7211,7 @@ MonoBehaviour:
   attactspeed: 0
   minThrowForce: 2
   maxThrowForce: 4
+  Player: {fileID: 0}
 --- !u!43 &484969015
 Mesh:
   m_ObjectHideFlags: 0

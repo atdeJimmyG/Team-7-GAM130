@@ -22,7 +22,7 @@ public class MainMenu : MonoBehaviour
         index = PlayerPrefs.GetInt("levelReached", 1);
         if (index + 1 > 3)
         {
-            index = index + 1;
+            index = index;
             text.text = "CONTINUE";
             text.fontSize = fontsize;
             Debug.Log(index);
