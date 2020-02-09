@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class RadialMenu : MonoBehaviour
 {
@@ -66,20 +67,29 @@ public class RadialMenu : MonoBehaviour
 
     public void GetCurrentMenuItem()
     {
-        MousePos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-        ToVector = new Vector2(MousePos.x / Screen.width, MousePos.y / Screen.height);
-        float angle = (Mathf.Atan2(FromVector2.y-CenterCircle.y, FromVector2.x-CenterCircle.x) - Mathf.Atan2(ToVector.y - CenterCircle.y, ToVector.x - CenterCircle.x)) * Mathf.Rad2Deg;
+        MousePos.x = Input.mousePosition.x - (Screen.width / 2f);
+        MousePos.y = Input.mousePosition.y - (Screen.height / 2f);
+        MousePos.Normalize();
 
-        if(angle < 0)
-            angle += 360;
-
-        CurrentMenuItem = (int)(angle / (360 /MenuItems));
-
-        if(CurrentMenuItem != OldMenuItem)
+        if(MousePos != Vector2.zero)
         {
-            Buttons[OldMenuItem].SenceImage.color = Buttons[OldMenuItem].NormalColor;
-            OldMenuItem = CurrentMenuItem;
-            Buttons[CurrentMenuItem].SenceImage.color = Buttons[CurrentMenuItem].HighlightedColor;
+            float angle = Mathf.Atan2(MousePos.y, -MousePos.x) / Mathf.PI;
+            angle *= 180;
+            angle -= 90f;
+            if(angle < 0)
+            {
+                angle += 360;
+            }
+
+            CurrentMenuItem = (int)(angle / (360 / MenuItems));
+
+            if (CurrentMenuItem != OldMenuItem)
+            {
+                Buttons[OldMenuItem].SenceImage.color = Buttons[OldMenuItem].NormalColor;
+                OldMenuItem = CurrentMenuItem;
+                Buttons[CurrentMenuItem].SenceImage.color = Buttons[CurrentMenuItem].HighlightedColor;
+            }
+            Debug.Log(angle);
         }
     }
 
@@ -128,7 +138,7 @@ public class RadialMenu : MonoBehaviour
     {
         float t = 0f;
 
-        while (t < 1f)
+        while (t < .1f)
         {
             t += Time.deltaTime;
             float a = curve.Evaluate(t);
@@ -149,3 +159,20 @@ public class MenuButton
     public Color PressedColor = Color.gray;
     public string Spell;
 }
+
+
+//MousePos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+//ToVector = new Vector2(MousePos.x / Screen.width, MousePos.y / Screen.height);
+//float angle = (Mathf.Atan2(FromVector2.y - CenterCircle.y, FromVector2.x - CenterCircle.x) - Mathf.Atan2(ToVector.y - CenterCircle.y, ToVector.x - CenterCircle.x)) * Mathf.Rad2Deg;
+
+//        if (angle< 0)
+//            angle += 360;
+
+//        CurrentMenuItem = (int) (angle / (360 / MenuItems));
+
+//        if (CurrentMenuItem != OldMenuItem)
+//        {
+//            Buttons[OldMenuItem].SenceImage.color = Buttons[OldMenuItem].NormalColor;
+//            OldMenuItem = CurrentMenuItem;
+//            Buttons[CurrentMenuItem].SenceImage.color = Buttons[CurrentMenuItem].HighlightedColor;
+//        }
