@@ -89,7 +89,6 @@ public class RadialMenu : MonoBehaviour
                 OldMenuItem = CurrentMenuItem;
                 Buttons[CurrentMenuItem].SenceImage.color = Buttons[CurrentMenuItem].HighlightedColor;
             }
-            Debug.Log(angle);
         }
     }
 
