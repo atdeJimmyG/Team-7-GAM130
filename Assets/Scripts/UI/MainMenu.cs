@@ -24,7 +24,6 @@ public class MainMenu : MonoBehaviour
         {
             text.text = "CONTINUE";
             text.fontSize = fontsize;
-            Debug.Log(index);
         }
     }
 
