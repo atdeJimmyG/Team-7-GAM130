@@ -4,7 +4,7 @@ using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
 using UnityEngine.UI;
-
+using UnityEngine.Experimental.Input;
 namespace UnityStandardAssets.Characters.FirstPerson
 {
     [RequireComponent(typeof (CharacterController))]
@@ -47,6 +47,26 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public Canvas RadialMenuCanvas;
         public bool UImode = false;
 
+        public InputMaster controls;
+
+        private void Awake()
+        {
+            controls.Player.OpenRadialMenu.started += context => OpenRadialMenu();
+            controls.Player.OpenRadialMenu.cancelled += context => CloseRadialMenu();
+
+            //controls.Player.Movement.performed += context => null; 
+        }
+
+        private void OnEnable()
+        {
+            controls.Enable();
+        }
+
+        private void OnDisable()
+        {
+            controls.Disable();
+        }
+
         // Use this for initialization
         private void Start()
         {
@@ -88,22 +108,26 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
 
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
+        }
 
-            if (Input.GetKeyDown(KeyCode.Q) && UImode == false)
+        void OpenRadialMenu()
+        {
+            if (!UImode)
             {
                 RadialMenuCanvas.enabled = true;
                 RadialMenu.Open();
                 UImode = true;
             }
-
-            if (Input.GetKeyUp(KeyCode.Q) && UImode == true)
+        }
+        void CloseRadialMenu()
+        {
+            if (UImode)
             {
                 RadialMenuCanvas.enabled = false;
                 RadialMenu.Close();
                 UImode = false;
             }
         }
-
 
         private void PlayLandingSound()
         {

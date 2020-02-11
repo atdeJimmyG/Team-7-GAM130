@@ -5782,6 +5782,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneFader
       objectReference: {fileID: 0}
+    - target: {fileID: 5303865494177523552, guid: e1ff94702516d314a8e0129da50c37a0,
+        type: 3}
+      propertyPath: loadBar
+      value: 
+      objectReference: {fileID: 319500033}
     - target: {fileID: 5303865494177523553, guid: e1ff94702516d314a8e0129da50c37a0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5837,11 +5842,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5303865494177523552, guid: e1ff94702516d314a8e0129da50c37a0,
-        type: 3}
-      propertyPath: loadBar
-      value: 
-      objectReference: {fileID: 319500033}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1ff94702516d314a8e0129da50c37a0, type: 3}
 --- !u!114 &319500032 stripped
@@ -7100,6 +7100,11 @@ PrefabInstance:
       propertyPath: RadialMenuCanvas
       value: 
       objectReference: {fileID: 1170002730}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: controls.m_Asset
+      value: 
+      objectReference: {fileID: 11400000, guid: e065831804838734ba6f53ff641d8c43,
+        type: 3}
     - target: {fileID: 5400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_Mass
       value: 1
@@ -29917,7 +29922,7 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.5
+      time: 0.099999994
       value: 1
       inSlope: 2
       outSlope: 2
