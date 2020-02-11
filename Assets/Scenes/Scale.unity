@@ -12166,6 +12166,11 @@ PrefabInstance:
       propertyPath: m_GravityMultiplier
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: controls.m_Asset
+      value: 
+      objectReference: {fileID: 11400000, guid: e065831804838734ba6f53ff641d8c43,
+        type: 3}
     - target: {fileID: 8100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_Enabled
       value: 0
