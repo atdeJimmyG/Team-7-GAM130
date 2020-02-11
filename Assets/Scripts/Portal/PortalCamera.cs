@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PortalCamera : MonoBehaviour
 {
@@ -9,7 +7,7 @@ public class PortalCamera : MonoBehaviour
     public Transform otherPortal;
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         Vector3 playerOffsetFromPortal = playerCamera.position - otherPortal.position;
         transform.position = Portal.position + playerOffsetFromPortal;

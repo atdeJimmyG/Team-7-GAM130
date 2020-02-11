@@ -6,14 +6,21 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class Telekinesis : MonoBehaviour
 {
     public Camera cam;
-    public float interactDist;
+    [SerializeField]
+    float interactDist;
 
     public Transform holdPos;
-    public float attactspeed;
 
-    public float minThrowForce;
-    public float maxThrowForce;
-    private float throwForce;
+    [SerializeField]
+    float attactspeed;
+
+    [SerializeField]
+    float minThrowForce;
+
+    [SerializeField]
+    float maxThrowForce;
+
+    float throwForce;
 
     private GameObject objectIHave;
     private Rigidbody objectRB;
