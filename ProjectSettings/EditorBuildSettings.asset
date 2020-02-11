@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Fire.unity
     guid: 02ebfa9a4def1304e90162a7e4d007dd
   - enabled: 1
-    path: Assets/Scenes/Scale.unity
+    path: Assets/Scenes/Scale2.unity
     guid: f021acf6029a2e34b99514253dfac234
   - enabled: 1
     path: Assets/Scenes/MultiSpellTest.unity
