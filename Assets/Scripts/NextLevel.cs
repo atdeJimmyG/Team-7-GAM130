@@ -8,7 +8,7 @@ public class NextLevel : MonoBehaviour
     public string NextLevelName;
     public int NextLevelIndex;
 
-    void OnTriggerEnter(Collider col)
+    void OnTriggerEnter(Collider player)
     {
         fader.fadeTo(NextLevelName);
         PlayerPrefs.SetInt("levelReached", NextLevelIndex);
