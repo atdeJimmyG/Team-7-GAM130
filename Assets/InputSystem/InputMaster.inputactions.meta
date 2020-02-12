@@ -9,6 +9,9 @@ ScriptedImporter:
     11400008: Player/Movement Gamepad
     11400010: Player/Jump
     11400012: Player/Sprint
+    11400014: Player/Primary
+    11400016: Player/Secondary
+    11400018: Player/Intract
   externalObjects: {}
   userData: 
   assetBundleName: 

@@ -8,6 +8,11 @@ public class InteractableButton : MonoBehaviour, IIntractable
 
     private const float maxRange = 2f;
 
+    [SerializeField] private GameObject spawneObject;
+    [SerializeField] private Transform spawnPos;
+
+    private GameObject currentCube;
+
     public void OnStartHover()
     {
         Debug.Log("Has overlapped");
@@ -16,7 +21,15 @@ public class InteractableButton : MonoBehaviour, IIntractable
 
     public void OnIntract()
     {
-        Debug.Log("Do Something, Like I Don't Know Spawn A Cube. It's Really Up To You Now");
+        if (currentCube == null)
+        {
+            currentCube = Instantiate(spawneObject, spawnPos.position, Quaternion.identity);
+        }
+        else if (currentCube != null)
+        {
+            Destroy(currentCube);
+            currentCube = Instantiate(spawneObject, spawnPos.position, Quaternion.identity);
+        }
     }
 
     public void OnEndHover()

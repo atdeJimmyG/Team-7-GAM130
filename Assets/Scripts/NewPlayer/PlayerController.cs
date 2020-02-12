@@ -26,6 +26,12 @@ public class PlayerController : MonoBehaviour
     Vector3 velocity;
     private bool isGrounded;
 
+
+    // Store all Scripts that need to be refed on that are on the player
+    public Telekinesis telekinesis;
+    public CameraRaycast cameraRaycast;
+    public Fireball fireball;
+
     // sets inputed movement speed to the inputed speed and sets up all on input performed events.
     private void Awake()
     {
@@ -33,7 +39,16 @@ public class PlayerController : MonoBehaviour
         controls.Player.Movement.performed += ctx => updateKeyborad(ctx.ReadValue<Vector2>(), ctx.control.device);
         controls.Player.MovementGamepad.performed += ctx => updateGamepad(ctx.ReadValue<Vector2>(), ctx.control.device);
         controls.Player.Jump.performed += ctx => jump();
-        controls.Player.Sprint.started += ctx => toggleSprint();        
+        controls.Player.Sprint.started += ctx => toggleSprint();
+        controls.Player.Primary.started += ctx => primaryAction();
+        controls.Player.Secondary.started += ctx => secondaryActionCharge();
+        controls.Player.Secondary.cancelled += ctx => secondartActionRelese();
+        controls.Player.Intract.started += ctx => intract();
+
+        // Sets all vaules that are required at awake
+        telekinesis = this.GetComponent<Telekinesis>();
+        cameraRaycast = this.GetComponent<CameraRaycast>();
+        fireball = this.GetComponent<Fireball>();
     }
     
     // When called changes the move of the player based on inputs from the keyborad.
@@ -124,6 +139,62 @@ public class PlayerController : MonoBehaviour
         {
             movementSpeed = inputedMovementSpeed;
             sprinting = false;
+        }
+    }
+
+    // When called based on what spell is currently active and does the corret action.
+    void primaryAction()
+    {
+        if (telekinesis.enabled == true)
+        {
+            if (telekinesis.hasObject == false)
+            {
+                telekinesis.doRay();
+            }
+            else if (telekinesis.hasObject == true)
+            {
+                telekinesis.dropObject();
+            }
+        }
+        else if (fireball.enabled == true)
+        {
+
+        }
+    }
+
+    // When called if the current spell has a alt action will then proform it.
+    void secondaryActionCharge()
+    {
+        if (telekinesis.enabled == true)
+        {
+            if (telekinesis.enabled == true && telekinesis.hasObject == true)
+            {
+                telekinesis.shouldCharge = true;
+                telekinesis.updateForce();
+            }
+        }
+        else if (fireball.enabled == true)
+        {
+
+        }
+    }
+
+    // Called when the charge for the alt action is done
+    void secondartActionRelese()
+    {
+        if (telekinesis.enabled == true && telekinesis.hasObject == true)
+        {
+            telekinesis.shouldCharge = false;
+            telekinesis.shootObject();
+        }
+    }
+
+    // When called intracts with the current intractable object in front of the camera.
+    void intract()
+    {
+        if (cameraRaycast.currentTarget != null)
+        {
+            cameraRaycast.currentTarget.OnIntract();
         }
     }
 

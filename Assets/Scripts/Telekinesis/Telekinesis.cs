@@ -27,11 +27,11 @@ public class Telekinesis : MonoBehaviour
 
     private Vector3 rotateVector = Vector3.one;
 
-    private bool hasObject = false;
+    public bool hasObject = false;
 
-    private bool shouldCharge = false;
+    public bool shouldCharge = false;
 
-    public FirstPersonController Player; 
+    //public PlayerController Player; 
 
     private void Start()
     {
@@ -41,45 +41,46 @@ public class Telekinesis : MonoBehaviour
 
     private void Update()
     {
-        bool InMenu = Player.UImode;
-        
-        if (!InMenu)
+
+        if (hasObject)
         {
-            if (Input.GetMouseButtonDown(0) && !hasObject)
+            if (checkDist() > -1f)
             {
-                doRay();
+                moveObjectToPos();
             }
+        }
 
-            if (Input.GetMouseButtonDown(1) && hasObject)
-            {
-                shouldCharge = true;
-                updateForce();
-            }
+        //    bool InMenu = Player.UImode;
 
-            if (Input.GetMouseButtonUp(1) && hasObject)
-            {
-                shouldCharge = false;
-                shootObject();
-            }
+        //    if (!InMenu)
+        //    {
+        //        if (Input.GetMouseButtonDown(0) && !hasObject)
+        //        {
+        //            doRay();
+        //        }
 
-            if (Input.GetKeyDown(KeyCode.E) && hasObject)
-            {
-                dropObject();
-            }
+        //        if (Input.GetMouseButtonDown(1) && hasObject)
+        //        {
+        //            shouldCharge = true;
+        //            updateForce();
+        //        }
 
-            if (hasObject)
-            {
-                if (checkDist() > -1f)
-                {
-                    moveObjectToPos();
-                }
-            }
-        }        
+        //        if (Input.GetMouseButtonUp(1) && hasObject)
+        //        {
+        //            shouldCharge = false;
+        //            shootObject();
+        //        }
+
+        //        if (Input.GetKeyDown(KeyCode.E) && hasObject)
+        //        {
+        //            dropObject();
+        //        }
+        //    }        
     }
 
-    //---------Fuction
+        //---------Fuction
 
-    public float checkDist()
+        public float checkDist()
     {
         float dist = Vector3.Distance(objectIHave.transform.position, holdPos.transform.position);
         return dist;
@@ -91,7 +92,7 @@ public class Telekinesis : MonoBehaviour
     }
 
     // Drops the held object
-    private void dropObject()
+    public void dropObject()
     {
         objectRB.constraints = RigidbodyConstraints.None;
         objectRB.useGravity = true;
@@ -102,7 +103,7 @@ public class Telekinesis : MonoBehaviour
 
     // Forces the held object forward
     // How far is based on throw force
-    private void shootObject()
+    public void shootObject()
     {
         throwForce = Mathf.Clamp(throwForce, minThrowForce, maxThrowForce);
         objectRB.AddForce(cam.transform.forward * throwForce, ForceMode.Impulse);
@@ -111,17 +112,18 @@ public class Telekinesis : MonoBehaviour
     }
 
     // When called do a ray trace froward and if hits sets object as held object.
-    private void doRay()
+    public void doRay()
     {
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, interactDist))
         {
+            Debug.Log(hit);
             if (hit.collider.CompareTag("Block"))
             {
                 objectIHave = hit.collider.gameObject;
-                //objectIHave.transform.SetParent(holdPos);
+                objectIHave.transform.SetParent(holdPos);
 
                 objectRB = objectIHave.GetComponent<Rigidbody>();
                 objectRB.constraints = RigidbodyConstraints.FreezeRotation;
@@ -133,7 +135,7 @@ public class Telekinesis : MonoBehaviour
     }
 
     // when called increse the throw force.
-    private void updateForce()
+    public void updateForce()
     {
         if (shouldCharge)
         {

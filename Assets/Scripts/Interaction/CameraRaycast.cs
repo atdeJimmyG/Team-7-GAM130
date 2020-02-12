@@ -6,7 +6,7 @@ public class CameraRaycast : MonoBehaviour
 {
     [SerializeField]private float range;
 
-    private IIntractable currentTarget;
+    public IIntractable currentTarget;
     private Camera mainCamera;
 
     private void Awake()
@@ -18,13 +18,13 @@ public class CameraRaycast : MonoBehaviour
     {
         RaycastForInteractable();
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (currentTarget != null)
-            {
-                currentTarget.OnIntract();
-            }
-        }
+        //if (Input.GetKeyDown(KeyCode.E))
+        //{
+        //    if (currentTarget != null)
+        //    {
+        //        currentTarget.OnIntract();
+        //    }
+        //}
     }
 
     private void RaycastForInteractable()

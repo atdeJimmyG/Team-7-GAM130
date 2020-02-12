@@ -26,6 +26,9 @@ public class InputMaster : InputActionAssetReference
         m_Player_MovementGamepad = m_Player.GetAction("Movement Gamepad");
         m_Player_Jump = m_Player.GetAction("Jump");
         m_Player_Sprint = m_Player.GetAction("Sprint");
+        m_Player_Primary = m_Player.GetAction("Primary");
+        m_Player_Secondary = m_Player.GetAction("Secondary");
+        m_Player_Intract = m_Player.GetAction("Intract");
         m_Initialized = true;
     }
     private void Uninitialize()
@@ -37,6 +40,9 @@ public class InputMaster : InputActionAssetReference
         m_Player_MovementGamepad = null;
         m_Player_Jump = null;
         m_Player_Sprint = null;
+        m_Player_Primary = null;
+        m_Player_Secondary = null;
+        m_Player_Intract = null;
         m_Initialized = false;
     }
     public void SetAsset(InputActionAsset newAsset)
@@ -57,6 +63,9 @@ public class InputMaster : InputActionAssetReference
     private InputAction m_Player_MovementGamepad;
     private InputAction m_Player_Jump;
     private InputAction m_Player_Sprint;
+    private InputAction m_Player_Primary;
+    private InputAction m_Player_Secondary;
+    private InputAction m_Player_Intract;
     public struct PlayerActions
     {
         private InputMaster m_Wrapper;
@@ -67,6 +76,9 @@ public class InputMaster : InputActionAssetReference
         public InputAction @MovementGamepad { get { return m_Wrapper.m_Player_MovementGamepad; } }
         public InputAction @Jump { get { return m_Wrapper.m_Player_Jump; } }
         public InputAction @Sprint { get { return m_Wrapper.m_Player_Sprint; } }
+        public InputAction @Primary { get { return m_Wrapper.m_Player_Primary; } }
+        public InputAction @Secondary { get { return m_Wrapper.m_Player_Secondary; } }
+        public InputAction @Intract { get { return m_Wrapper.m_Player_Intract; } }
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
