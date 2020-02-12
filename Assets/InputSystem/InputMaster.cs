@@ -23,6 +23,9 @@ public class InputMaster : InputActionAssetReference
         m_Player_OpenRadialMenu = m_Player.GetAction("OpenRadialMenu");
         m_Player_Movement = m_Player.GetAction("Movement");
         m_Player_Look = m_Player.GetAction("Look");
+        m_Player_MovementGamepad = m_Player.GetAction("Movement Gamepad");
+        m_Player_Jump = m_Player.GetAction("Jump");
+        m_Player_Sprint = m_Player.GetAction("Sprint");
         m_Initialized = true;
     }
     private void Uninitialize()
@@ -31,6 +34,9 @@ public class InputMaster : InputActionAssetReference
         m_Player_OpenRadialMenu = null;
         m_Player_Movement = null;
         m_Player_Look = null;
+        m_Player_MovementGamepad = null;
+        m_Player_Jump = null;
+        m_Player_Sprint = null;
         m_Initialized = false;
     }
     public void SetAsset(InputActionAsset newAsset)
@@ -48,6 +54,9 @@ public class InputMaster : InputActionAssetReference
     private InputAction m_Player_OpenRadialMenu;
     private InputAction m_Player_Movement;
     private InputAction m_Player_Look;
+    private InputAction m_Player_MovementGamepad;
+    private InputAction m_Player_Jump;
+    private InputAction m_Player_Sprint;
     public struct PlayerActions
     {
         private InputMaster m_Wrapper;
@@ -55,6 +64,9 @@ public class InputMaster : InputActionAssetReference
         public InputAction @OpenRadialMenu { get { return m_Wrapper.m_Player_OpenRadialMenu; } }
         public InputAction @Movement { get { return m_Wrapper.m_Player_Movement; } }
         public InputAction @Look { get { return m_Wrapper.m_Player_Look; } }
+        public InputAction @MovementGamepad { get { return m_Wrapper.m_Player_MovementGamepad; } }
+        public InputAction @Jump { get { return m_Wrapper.m_Player_Jump; } }
+        public InputAction @Sprint { get { return m_Wrapper.m_Player_Sprint; } }
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
