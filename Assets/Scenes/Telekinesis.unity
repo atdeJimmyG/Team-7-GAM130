@@ -473,7 +473,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14644
+  m_Name: pb_Mesh14708
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -640,7 +640,7 @@ GameObject:
   - component: {fileID: 80307797}
   - component: {fileID: 80307796}
   - component: {fileID: 80307795}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1946,7 +1946,7 @@ GameObject:
   - component: {fileID: 218850893}
   - component: {fileID: 218850892}
   - component: {fileID: 218850891}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5640,7 +5640,7 @@ GameObject:
   - component: {fileID: 439494324}
   - component: {fileID: 439494323}
   - component: {fileID: 439494322}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7594,7 +7594,7 @@ GameObject:
   - component: {fileID: 555196866}
   - component: {fileID: 555196865}
   - component: {fileID: 555196864}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Stairs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12683,7 +12683,7 @@ GameObject:
   - component: {fileID: 910045717}
   - component: {fileID: 910045716}
   - component: {fileID: 910045715}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20182,13 +20182,13 @@ MonoBehaviour:
     m_Asset: {fileID: 11400000, guid: e065831804838734ba6f53ff641d8c43, type: 3}
   controller: {fileID: 1036233542}
   movementSpeed: 7
-  sprintSpeed: 14
+  sprintSpeed: 10
   gravity: -29.43
   groundCheck: {fileID: 1579626673}
   groundDistance: 0.4
   groundMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 256
   jumpHeight: 1
 --- !u!4 &1067718472 stripped
 Transform:
@@ -20362,7 +20362,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14922
+  m_Name: pb_Mesh14982
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -20529,7 +20529,7 @@ GameObject:
   - component: {fileID: 1123305581}
   - component: {fileID: 1123305580}
   - component: {fileID: 1123305579}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Stairs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21986,7 +21986,7 @@ GameObject:
   - component: {fileID: 1171134338}
   - component: {fileID: 1171134337}
   - component: {fileID: 1171134336}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23323,7 +23323,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14894
+  m_Name: pb_Mesh14958
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -24328,7 +24328,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14976
+  m_Name: pb_Mesh15036
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -24655,7 +24655,7 @@ GameObject:
   - component: {fileID: 1327618873}
   - component: {fileID: 1327618872}
   - component: {fileID: 1327618871}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26883,7 +26883,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14840
+  m_Name: pb_Mesh14904
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -28743,7 +28743,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14820
+  m_Name: pb_Mesh14884
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -29997,7 +29997,7 @@ GameObject:
   - component: {fileID: 1744987510}
   - component: {fileID: 1744987509}
   - component: {fileID: 1744987508}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Stairs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31519,7 +31519,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15118
+  m_Name: pb_Mesh15182
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -31754,7 +31754,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14714
+  m_Name: pb_Mesh14778
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -35661,7 +35661,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14760
+  m_Name: pb_Mesh14824
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -35981,7 +35981,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14594
+  m_Name: pb_Mesh14658
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
