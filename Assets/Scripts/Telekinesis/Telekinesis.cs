@@ -48,6 +48,15 @@ public class Telekinesis : MonoBehaviour
             {
                 moveObjectToPos();
             }
+
+            RaycastHit hit;
+            Physics.Raycast(transform.position, Vector3.down, out hit,Mathf.Infinity);
+
+            if (hit.collider.gameObject == objectIHave)
+            {
+                Debug.Log("Dropped because box was stood on");
+                dropObject();
+            }
         }      
     }
 
