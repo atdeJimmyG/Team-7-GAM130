@@ -22,7 +22,7 @@ public class Telekinesis : MonoBehaviour
 
     float throwForce;
 
-    private GameObject objectIHave;
+    public GameObject objectIHave;
     private Rigidbody objectRB;
 
     private Vector3 rotateVector = Vector3.one;

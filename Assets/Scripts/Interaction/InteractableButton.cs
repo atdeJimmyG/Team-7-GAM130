@@ -6,7 +6,7 @@ public class InteractableButton : MonoBehaviour, IIntractable
 {
     public float MaxRange { get { return maxRange;  } }
 
-    private const float maxRange = 2f;
+    private const float maxRange = 4f;
 
     [SerializeField] private GameObject spawneObject;
     [SerializeField] private Transform spawnPos;
