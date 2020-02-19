@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
-{ 
+{
     public SceneFader scenefader;
     public string NextLevel;
     public Text text;
@@ -13,6 +13,9 @@ public class MainMenu : MonoBehaviour
 
     private int fontsize = 75;
     private int index = 1;
+
+    [SerializeField] private Button levelSelectButton;
+    [SerializeField] private Text levelSelectText;
 
     void Start()
     {
@@ -24,6 +27,21 @@ public class MainMenu : MonoBehaviour
         {
             text.text = "CONTINUE";
             text.fontSize = fontsize;
+        }
+        else
+        {
+            levelSelectButton.interactable = false;
+            levelSelectText.color = new Color(255f, 255f, 255f, .5f);
+        }
+
+        index = PlayerPrefs.GetInt("levelReached", 1);
+        if (index + 1 >= 2)
+        {
+            PlayerPrefs.SetInt("levelReached", 2);
+        }
+        else if (index == 0)
+        {
+            PlayerPrefs.SetInt("levelReached", 2);
         }
     }
 

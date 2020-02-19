@@ -48,34 +48,7 @@ public class Telekinesis : MonoBehaviour
             {
                 moveObjectToPos();
             }
-        }
-
-        //    bool InMenu = Player.UImode;
-
-        //    if (!InMenu)
-        //    {
-        //        if (Input.GetMouseButtonDown(0) && !hasObject)
-        //        {
-        //            doRay();
-        //        }
-
-        //        if (Input.GetMouseButtonDown(1) && hasObject)
-        //        {
-        //            shouldCharge = true;
-        //            updateForce();
-        //        }
-
-        //        if (Input.GetMouseButtonUp(1) && hasObject)
-        //        {
-        //            shouldCharge = false;
-        //            shootObject();
-        //        }
-
-        //        if (Input.GetKeyDown(KeyCode.E) && hasObject)
-        //        {
-        //            dropObject();
-        //        }
-        //    }        
+        }      
     }
 
         //---------Fuction
