@@ -20,6 +20,13 @@ public class PlayerController : MonoBehaviour
     bool crouched = false;
     float height = 1.8f;
 
+    // All of the veribles that effects the UI On The Character
+    RadialMenu radialMenu;
+    [SerializeField] Canvas radialMenuCanvas;
+    [SerializeField] Canvas pauseMenu;
+    bool inUI = false;
+    bool gamePaused;
+
     // These effect how the gravity, ground check and how the jump works.
     [SerializeField] private float gravity = -9.81f;
     [SerializeField] Transform groundCheck;
@@ -48,13 +55,22 @@ public class PlayerController : MonoBehaviour
         controls.Player.Secondary.cancelled += ctx => secondartActionRelese();
         controls.Player.Intract.started += ctx => intract();
         controls.Player.Crouch.performed += ctx => crouch();
+        controls.Player.OpenRadialMenu.started += ctx => openRadialMenu();
+        controls.Player.OpenRadialMenu.cancelled += ctx => closeRadialMenu();
 
         // Sets all vaules that are required at awake
         telekinesis = this.GetComponent<Telekinesis>();
         cameraRaycast = this.GetComponent<CameraRaycast>();
         fireball = this.GetComponent<Fireball>();
     }
-    
+
+    private void Start()
+    {
+        //Sets all vaules for the UI that are required at start.
+        radialMenu = GetComponent<RadialMenu>();
+        radialMenuCanvas.enabled = false;
+    }
+
     // When called changes the move of the player based on inputs from the keyborad.
     void updateKeyborad(Vector2 input, UnityEngine.Experimental.Input.InputDevice context)
     {
@@ -227,6 +243,29 @@ public class PlayerController : MonoBehaviour
         if (cameraRaycast.currentTarget != null)
         {
             cameraRaycast.currentTarget.OnIntract();
+        }
+    }
+
+    //When called toggles the radial menu on and off
+    void openRadialMenu()
+    {
+        Debug.Log("opened radial menu");
+        if (!inUI)
+        {
+            radialMenuCanvas.enabled = true;
+            radialMenu.Open();
+            inUI = true;
+        }
+    }
+
+    void closeRadialMenu()
+    {
+        Debug.Log("closed radial menu");
+        if (inUI)
+        {
+            radialMenuCanvas.enabled = false;
+            radialMenu.Close();
+            inUI = false;
         }
     }
 

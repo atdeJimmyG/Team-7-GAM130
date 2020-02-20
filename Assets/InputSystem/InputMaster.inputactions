@@ -6,16 +6,6 @@
             "id": "87fe2d5c-da4b-453a-b5ee-e583c5b04fdd",
             "actions": [
                 {
-                    "name": "OpenRadialMenu",
-                    "id": "f1382fd0-1215-4eda-838c-75b22886cc8f",
-                    "expectedControlLayout": "Button",
-                    "continuous": false,
-                    "passThrough": false,
-                    "processors": "",
-                    "interactions": "Press",
-                    "bindings": []
-                },
-                {
                     "name": "Movement",
                     "id": "5010f072-8e27-49b0-9f55-5173e13b29cc",
                     "expectedControlLayout": "Vector2",
@@ -100,7 +90,7 @@
                     "id": "5ed7338b-85dc-461f-9068-919ecda4f419",
                     "expectedControlLayout": "Button",
                     "continuous": false,
-                    "passThrough": false,
+                    "passThrough": true,
                     "processors": "",
                     "interactions": "",
                     "bindings": []
@@ -114,6 +104,26 @@
                     "processors": "",
                     "interactions": "",
                     "bindings": []
+                },
+                {
+                    "name": "OpenRadialMenu",
+                    "id": "f1382fd0-1215-4eda-838c-75b22886cc8f",
+                    "expectedControlLayout": "Button",
+                    "continuous": false,
+                    "passThrough": false,
+                    "processors": "",
+                    "interactions": "",
+                    "bindings": []
+                },
+                {
+                    "name": "RadialMenuNavigation",
+                    "id": "6e83d4db-9ddc-483d-95cc-0ebd4d87899e",
+                    "expectedControlLayout": "Vector2",
+                    "continuous": false,
+                    "passThrough": true,
+                    "processors": "",
+                    "interactions": "",
+                    "bindings": []
                 }
             ],
             "bindings": [
@@ -121,30 +131,6 @@
                     "name": "",
                     "path": "<Keyboard>/q",
                     "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "OpenRadialMenu",
-                    "chainWithPrevious": false,
-                    "isComposite": false,
-                    "isPartOfComposite": false,
-                    "modifiers": ""
-                },
-                {
-                    "name": "",
-                    "path": "<DualShockGamepad>/leftShoulder",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "OpenRadialMenu",
-                    "chainWithPrevious": false,
-                    "isComposite": false,
-                    "isPartOfComposite": false,
-                    "modifiers": ""
-                },
-                {
-                    "name": "",
-                    "path": "<Keyboard>/q",
-                    "interactions": "Press",
                     "processors": "",
                     "groups": "Keyborad & Mouse",
                     "action": "OpenRadialMenu",
@@ -156,7 +142,7 @@
                 {
                     "name": "",
                     "path": "<Gamepad>/leftShoulder",
-                    "interactions": "Press",
+                    "interactions": "",
                     "processors": "",
                     "groups": "GamePad",
                     "action": "OpenRadialMenu",
@@ -424,6 +410,30 @@
                     "processors": "",
                     "groups": "Keyborad & Mouse",
                     "action": "Pause",
+                    "chainWithPrevious": false,
+                    "isComposite": false,
+                    "isPartOfComposite": false,
+                    "modifiers": ""
+                },
+                {
+                    "name": "",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyborad & Mouse",
+                    "action": "RadialMenuNavigation",
+                    "chainWithPrevious": false,
+                    "isComposite": false,
+                    "isPartOfComposite": false,
+                    "modifiers": ""
+                },
+                {
+                    "name": "",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GamePad",
+                    "action": "RadialMenuNavigation",
                     "chainWithPrevious": false,
                     "isComposite": false,
                     "isPartOfComposite": false,

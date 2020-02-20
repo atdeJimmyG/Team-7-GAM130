@@ -101,7 +101,6 @@ public class Telekinesis : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, interactDist))
         {
-            Debug.Log(hit);
             if (hit.collider.CompareTag("Block"))
             {
                 objectIHave = hit.collider.gameObject;

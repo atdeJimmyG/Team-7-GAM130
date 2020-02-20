@@ -20,7 +20,6 @@ public class InputMaster : InputActionAssetReference
     {
         // Player
         m_Player = asset.GetActionMap("Player");
-        m_Player_OpenRadialMenu = m_Player.GetAction("OpenRadialMenu");
         m_Player_Movement = m_Player.GetAction("Movement");
         m_Player_Look = m_Player.GetAction("Look");
         m_Player_MovementGamepad = m_Player.GetAction("Movement Gamepad");
@@ -31,12 +30,13 @@ public class InputMaster : InputActionAssetReference
         m_Player_Intract = m_Player.GetAction("Intract");
         m_Player_Crouch = m_Player.GetAction("Crouch");
         m_Player_Pause = m_Player.GetAction("Pause");
+        m_Player_OpenRadialMenu = m_Player.GetAction("OpenRadialMenu");
+        m_Player_RadialMenuNavigation = m_Player.GetAction("RadialMenuNavigation");
         m_Initialized = true;
     }
     private void Uninitialize()
     {
         m_Player = null;
-        m_Player_OpenRadialMenu = null;
         m_Player_Movement = null;
         m_Player_Look = null;
         m_Player_MovementGamepad = null;
@@ -47,6 +47,8 @@ public class InputMaster : InputActionAssetReference
         m_Player_Intract = null;
         m_Player_Crouch = null;
         m_Player_Pause = null;
+        m_Player_OpenRadialMenu = null;
+        m_Player_RadialMenuNavigation = null;
         m_Initialized = false;
     }
     public void SetAsset(InputActionAsset newAsset)
@@ -61,7 +63,6 @@ public class InputMaster : InputActionAssetReference
     }
     // Player
     private InputActionMap m_Player;
-    private InputAction m_Player_OpenRadialMenu;
     private InputAction m_Player_Movement;
     private InputAction m_Player_Look;
     private InputAction m_Player_MovementGamepad;
@@ -72,11 +73,12 @@ public class InputMaster : InputActionAssetReference
     private InputAction m_Player_Intract;
     private InputAction m_Player_Crouch;
     private InputAction m_Player_Pause;
+    private InputAction m_Player_OpenRadialMenu;
+    private InputAction m_Player_RadialMenuNavigation;
     public struct PlayerActions
     {
         private InputMaster m_Wrapper;
         public PlayerActions(InputMaster wrapper) { m_Wrapper = wrapper; }
-        public InputAction @OpenRadialMenu { get { return m_Wrapper.m_Player_OpenRadialMenu; } }
         public InputAction @Movement { get { return m_Wrapper.m_Player_Movement; } }
         public InputAction @Look { get { return m_Wrapper.m_Player_Look; } }
         public InputAction @MovementGamepad { get { return m_Wrapper.m_Player_MovementGamepad; } }
@@ -87,6 +89,8 @@ public class InputMaster : InputActionAssetReference
         public InputAction @Intract { get { return m_Wrapper.m_Player_Intract; } }
         public InputAction @Crouch { get { return m_Wrapper.m_Player_Crouch; } }
         public InputAction @Pause { get { return m_Wrapper.m_Player_Pause; } }
+        public InputAction @OpenRadialMenu { get { return m_Wrapper.m_Player_OpenRadialMenu; } }
+        public InputAction @RadialMenuNavigation { get { return m_Wrapper.m_Player_RadialMenuNavigation; } }
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }

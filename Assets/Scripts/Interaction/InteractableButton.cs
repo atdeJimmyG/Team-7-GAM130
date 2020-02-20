@@ -11,11 +11,13 @@ public class InteractableButton : MonoBehaviour, IIntractable
     [SerializeField] private GameObject spawneObject;
     [SerializeField] private Transform spawnPos;
 
+    public Canvas shownText;
+
     private GameObject currentCube;
 
     public void OnStartHover()
     {
-        Debug.Log("Has overlapped");
+        shownText.enabled = true;
     }
 
 
@@ -34,6 +36,6 @@ public class InteractableButton : MonoBehaviour, IIntractable
 
     public void OnEndHover()
     {
-        Debug.Log("Overlapped has ended");
+        shownText.enabled = false;
     }
 }
