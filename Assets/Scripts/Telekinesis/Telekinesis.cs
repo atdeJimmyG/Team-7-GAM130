@@ -44,7 +44,7 @@ public class Telekinesis : MonoBehaviour
 
         if (hasObject)
         {
-            if (checkDist() > -1f)
+            if (checkDist() > -.1f)
             {
                 moveObjectToPos();
             }
@@ -62,7 +62,7 @@ public class Telekinesis : MonoBehaviour
 
         //---------Fuction
 
-        public float checkDist()
+    public float checkDist()
     {
         float dist = Vector3.Distance(objectIHave.transform.position, holdPos.transform.position);
         return dist;

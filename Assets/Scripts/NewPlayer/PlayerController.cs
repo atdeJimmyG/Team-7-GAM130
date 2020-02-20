@@ -10,12 +10,15 @@ public class PlayerController : MonoBehaviour
     public CharacterController controller;
     [SerializeField] private float movementSpeed = 12f;
     [SerializeField] private float sprintSpeed = 20f;
+    [SerializeField] private AnimationCurve crouchCurve;
     float x = 0f;
     float z = 0f;
     bool neverDone = false;
     bool isKeyborad;
     private float inputedMovementSpeed;
     bool sprinting = false;
+    bool crouched = false;
+    float height = 1.8f;
 
     // These effect how the gravity, ground check and how the jump works.
     [SerializeField] private float gravity = -9.81f;
@@ -44,6 +47,7 @@ public class PlayerController : MonoBehaviour
         controls.Player.Secondary.started += ctx => secondaryActionCharge();
         controls.Player.Secondary.cancelled += ctx => secondartActionRelese();
         controls.Player.Intract.started += ctx => intract();
+        controls.Player.Crouch.performed += ctx => crouch();
 
         // Sets all vaules that are required at awake
         telekinesis = this.GetComponent<Telekinesis>();
@@ -139,6 +143,34 @@ public class PlayerController : MonoBehaviour
         {
             movementSpeed = inputedMovementSpeed;
             sprinting = false;
+        }
+    }
+
+    void crouch()
+    {
+        if (crouched)
+        {
+            float t = 0f;
+
+            while (t < 1f)
+            {
+                t += Time.deltaTime;
+                height = crouchCurve.Evaluate(t);
+                controller.height = height;
+            }
+            crouched = false;
+        }
+        else if (!crouched)
+        {
+            float t = 1f;
+
+            while (t > 0f)
+            {
+                t -= Time.deltaTime;
+                height = crouchCurve.Evaluate(t);
+                controller.height = height;
+            }
+            crouched = true;
         }
     }
 

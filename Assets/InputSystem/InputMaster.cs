@@ -29,6 +29,8 @@ public class InputMaster : InputActionAssetReference
         m_Player_Primary = m_Player.GetAction("Primary");
         m_Player_Secondary = m_Player.GetAction("Secondary");
         m_Player_Intract = m_Player.GetAction("Intract");
+        m_Player_Crouch = m_Player.GetAction("Crouch");
+        m_Player_Pause = m_Player.GetAction("Pause");
         m_Initialized = true;
     }
     private void Uninitialize()
@@ -43,6 +45,8 @@ public class InputMaster : InputActionAssetReference
         m_Player_Primary = null;
         m_Player_Secondary = null;
         m_Player_Intract = null;
+        m_Player_Crouch = null;
+        m_Player_Pause = null;
         m_Initialized = false;
     }
     public void SetAsset(InputActionAsset newAsset)
@@ -66,6 +70,8 @@ public class InputMaster : InputActionAssetReference
     private InputAction m_Player_Primary;
     private InputAction m_Player_Secondary;
     private InputAction m_Player_Intract;
+    private InputAction m_Player_Crouch;
+    private InputAction m_Player_Pause;
     public struct PlayerActions
     {
         private InputMaster m_Wrapper;
@@ -79,6 +85,8 @@ public class InputMaster : InputActionAssetReference
         public InputAction @Primary { get { return m_Wrapper.m_Player_Primary; } }
         public InputAction @Secondary { get { return m_Wrapper.m_Player_Secondary; } }
         public InputAction @Intract { get { return m_Wrapper.m_Player_Intract; } }
+        public InputAction @Crouch { get { return m_Wrapper.m_Player_Crouch; } }
+        public InputAction @Pause { get { return m_Wrapper.m_Player_Pause; } }
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }

@@ -12,6 +12,8 @@ ScriptedImporter:
     11400014: Player/Primary
     11400016: Player/Secondary
     11400018: Player/Intract
+    11400020: Player/Crouch
+    11400022: Player/Pause
   externalObjects: {}
   userData: 
   assetBundleName: 
