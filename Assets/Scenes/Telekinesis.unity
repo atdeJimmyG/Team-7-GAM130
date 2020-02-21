@@ -7341,7 +7341,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15678
+  m_Name: pb_Mesh157230
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -20169,7 +20169,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15702
+  m_Name: pb_Mesh157254
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -23701,7 +23701,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15274
+  m_Name: pb_Mesh156876
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -38397,6 +38397,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2023586774}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2054118811 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5676646900517323543, guid: 4d3dadd5f843a1c4aafe0ad4748eed95,
+    type: 3}
+  m_PrefabInstance: {fileID: 5676646901222168013}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83aca47f70325144ca5b31626ca3c2a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2055117322
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38775,7 +38787,7 @@ GameObject:
   - component: {fileID: 2123677371}
   - component: {fileID: 2123677370}
   - component: {fileID: 2123677369}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39283,7 +39295,7 @@ GameObject:
   - component: {fileID: 2146530618}
   - component: {fileID: 2146530617}
   - component: {fileID: 2146530616}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46655,6 +46667,16 @@ PrefabInstance:
       propertyPath: scenefader
       value: 
       objectReference: {fileID: 2146337222}
+    - target: {fileID: 5676646900653917725, guid: 4d3dadd5f843a1c4aafe0ad4748eed95,
+        type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1036233544}
+    - target: {fileID: 5676646900653917725, guid: 4d3dadd5f843a1c4aafe0ad4748eed95,
+        type: 3}
+      propertyPath: mouseLook
+      value: 
+      objectReference: {fileID: 2054118811}
     - target: {fileID: 5676646900545017393, guid: 4d3dadd5f843a1c4aafe0ad4748eed95,
         type: 3}
       propertyPath: m_LocalPosition.z
