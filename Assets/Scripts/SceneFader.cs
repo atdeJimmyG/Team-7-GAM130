@@ -112,6 +112,7 @@ public class SceneFader : MonoBehaviour
         if (operation.isDone)
         {
             loadBar.enabled = false;
+            Destroy(GameObject.FindGameObjectWithTag("Player"));
         }
 
     }

@@ -6,9 +6,12 @@ public class DestroyObjectWall : MonoBehaviour
 {
     private PlayerController controller;
 
-    private void Start()
+    private void Update()
     {
-        controller = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        if (controller == null)
+        {
+            controller = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        }
     }
 
     void OnTriggerEnter(Collider block)

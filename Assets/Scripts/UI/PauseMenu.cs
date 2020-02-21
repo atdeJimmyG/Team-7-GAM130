@@ -55,7 +55,6 @@ public class PauseMenu : MonoBehaviour
     {
         Resume();
         scenefader.fadeTo("MainMenu");
-        Destroy(GameObject.FindGameObjectWithTag("Player"));
     }
     // Loads the "MainMenu" scene
 }
