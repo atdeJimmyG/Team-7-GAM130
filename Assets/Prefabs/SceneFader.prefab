@@ -291,7 +291,7 @@ GameObject:
   - component: {fileID: 5303865494177523552}
   m_Layer: 0
   m_Name: SceneFader
-  m_TagString: Untagged
+  m_TagString: SceneFader
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -12,7 +12,7 @@ public class PauseMenu : MonoBehaviour
     private SceneFader scenefader;
     public Canvas pauseMenuUI;
 
-    private void Awake()
+    private void Start()
     {
         scenefader = GameObject.FindGameObjectWithTag("SceneFader").GetComponent<SceneFader>();
     }
