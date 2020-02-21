@@ -58,6 +58,9 @@ public class MouseLook : MonoBehaviour
     }
     private void Update()
     {
-
+    }
+    private void OnLevelWasLoaded(int level)
+    {
+        Destroy(this);
     }
 }

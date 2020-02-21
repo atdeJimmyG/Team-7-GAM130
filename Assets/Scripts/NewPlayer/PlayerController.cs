@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     RadialMenu radialMenu;
     [SerializeField] Canvas radialMenuCanvas;
     PauseMenu pauseMenu;
-    bool inUI = false;
+    public bool inUI = false;
     bool gamePaused;
 
     // These effect how the gravity, ground check and how the jump works.
@@ -76,7 +76,6 @@ public class PlayerController : MonoBehaviour
         radialMenuCanvas.enabled = false;
         pauseMenu = GameObject.FindObjectOfType<PauseMenu>();
         eventSystem = GameObject.FindObjectOfType<EventSystem>();
-        Object.DontDestroyOnLoad(this);
     }
 
     // When called changes the move of the player based on inputs from the keyborad.
@@ -217,7 +216,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (fireball.enabled == true)
         {
-
+            fireball.FireTest();
         }
     }
 
@@ -234,7 +233,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (fireball.enabled == true)
         {
-
+            
         }
     }
 
@@ -286,18 +285,23 @@ public class PlayerController : MonoBehaviour
         if (pauseMenu.GameIsPaused)
         {
             pauseMenu.Resume();
+            inUI = false;
         }
         else
         {
             pauseMenu.Pause();
+            inUI = true;
         }
     }
 
     // When the player press the south gamepad button this is called which then tells the event system to trigger teh selected button.
     void Confirmation()
     {
-        GameObject currentlySelected = eventSystem.currentSelectedGameObject;
-        ExecuteEvents.Execute(currentlySelected, new BaseEventData(eventSystem), ExecuteEvents.submitHandler);
+        if (inUI)
+        {
+            GameObject currentlySelected = eventSystem.currentSelectedGameObject;
+            ExecuteEvents.Execute(currentlySelected, new BaseEventData(eventSystem), ExecuteEvents.submitHandler);
+        }
     }
 
     // This are used to enable and disable the controls.

@@ -23,28 +23,36 @@ public class Fireball : MonoBehaviour
     //"nextFireTime" is the time since the script began running when the next fireball can be launched
     private float nextFireTime = 0;
 
-    // player ref used to then check if the player is in the UI
-    public FirstPersonController Player;
+    // pause menu ref used to then check if the player is in the UI
+    public PlayerController player;
+
+    bool testing= true;
 
     void Update()
     {
         
-        bool inMenu = Player.UImode;
+        bool inMenu = player.inUI;
         //The script contantly keeps track of when fireballs are launched, keeping a minimum amount of time between each
         if (Time.time > nextFireTime)
         {
             // Checks what state UImode is. This then either enables the spell or disables it based on its results.               
             if (!inMenu)
             {
-                if (Input.GetMouseButtonDown(0))
-                {
-                    FireFire();
-                    nextFireTime = Time.time + coolDownTime;
-                }
+                testing = true;
             }
    
         }
         
+    }
+
+    public void FireTest()
+    {
+        if (testing)
+        {
+            FireFire();
+            nextFireTime = Time.time + coolDownTime;
+            testing = false;
+        }
     }
 
     //"FireFire" is the part that actually creates and propels the fireball
