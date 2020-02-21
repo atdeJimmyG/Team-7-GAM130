@@ -15,6 +15,7 @@ public class MouseLook : MonoBehaviour
 
     private void Awake()
     {
+
         controls.Player.Look.performed += context => updateCameraPos(context.ReadValue<Vector2>(), context.control.device);
     }
 
@@ -57,5 +58,6 @@ public class MouseLook : MonoBehaviour
     }
     private void Update()
     {
+
     }
 }

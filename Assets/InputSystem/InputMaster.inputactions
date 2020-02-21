@@ -100,7 +100,7 @@
                     "id": "606b10de-0bfc-474d-a7a8-97231caf5914",
                     "expectedControlLayout": "Button",
                     "continuous": false,
-                    "passThrough": true,
+                    "passThrough": false,
                     "processors": "",
                     "interactions": "",
                     "bindings": []
@@ -116,11 +116,11 @@
                     "bindings": []
                 },
                 {
-                    "name": "RadialMenuNavigation",
-                    "id": "6e83d4db-9ddc-483d-95cc-0ebd4d87899e",
-                    "expectedControlLayout": "Vector2",
+                    "name": "UIconfirmation",
+                    "id": "db47c817-8fdb-43a8-a397-fc809d07b913",
+                    "expectedControlLayout": "Button",
                     "continuous": false,
-                    "passThrough": true,
+                    "passThrough": false,
                     "processors": "",
                     "interactions": "",
                     "bindings": []
@@ -417,11 +417,11 @@
                 },
                 {
                     "name": "",
-                    "path": "<Mouse>/delta",
+                    "path": "<Keyboard>/p",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyborad & Mouse",
-                    "action": "RadialMenuNavigation",
+                    "action": "Pause",
                     "chainWithPrevious": false,
                     "isComposite": false,
                     "isPartOfComposite": false,
@@ -429,11 +429,11 @@
                 },
                 {
                     "name": "",
-                    "path": "<Gamepad>/rightStick",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "GamePad",
-                    "action": "RadialMenuNavigation",
+                    "action": "UIconfirmation",
                     "chainWithPrevious": false,
                     "isComposite": false,
                     "isPartOfComposite": false,

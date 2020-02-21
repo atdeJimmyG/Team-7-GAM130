@@ -15,6 +15,5 @@ public class pad : MonoBehaviour
     void OnTriggerExit(Collider col)
     {
         Test.SetBool("Lower", false);
-        Debug.Log("udfgkjdfigongfihj");
     }
 }

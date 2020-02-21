@@ -14,7 +14,7 @@ ScriptedImporter:
     11400018: Player/Intract
     11400020: Player/Crouch
     11400022: Player/Pause
-    11400024: Player/RadialMenuNavigation
+    11400026: Player/UIconfirmation
   externalObjects: {}
   userData: 
   assetBundleName: 

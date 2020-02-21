@@ -31,7 +31,7 @@ public class InputMaster : InputActionAssetReference
         m_Player_Crouch = m_Player.GetAction("Crouch");
         m_Player_Pause = m_Player.GetAction("Pause");
         m_Player_OpenRadialMenu = m_Player.GetAction("OpenRadialMenu");
-        m_Player_RadialMenuNavigation = m_Player.GetAction("RadialMenuNavigation");
+        m_Player_UIconfirmation = m_Player.GetAction("UIconfirmation");
         m_Initialized = true;
     }
     private void Uninitialize()
@@ -48,7 +48,7 @@ public class InputMaster : InputActionAssetReference
         m_Player_Crouch = null;
         m_Player_Pause = null;
         m_Player_OpenRadialMenu = null;
-        m_Player_RadialMenuNavigation = null;
+        m_Player_UIconfirmation = null;
         m_Initialized = false;
     }
     public void SetAsset(InputActionAsset newAsset)
@@ -74,7 +74,7 @@ public class InputMaster : InputActionAssetReference
     private InputAction m_Player_Crouch;
     private InputAction m_Player_Pause;
     private InputAction m_Player_OpenRadialMenu;
-    private InputAction m_Player_RadialMenuNavigation;
+    private InputAction m_Player_UIconfirmation;
     public struct PlayerActions
     {
         private InputMaster m_Wrapper;
@@ -90,7 +90,7 @@ public class InputMaster : InputActionAssetReference
         public InputAction @Crouch { get { return m_Wrapper.m_Player_Crouch; } }
         public InputAction @Pause { get { return m_Wrapper.m_Player_Pause; } }
         public InputAction @OpenRadialMenu { get { return m_Wrapper.m_Player_OpenRadialMenu; } }
-        public InputAction @RadialMenuNavigation { get { return m_Wrapper.m_Player_RadialMenuNavigation; } }
+        public InputAction @UIconfirmation { get { return m_Wrapper.m_Player_UIconfirmation; } }
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }

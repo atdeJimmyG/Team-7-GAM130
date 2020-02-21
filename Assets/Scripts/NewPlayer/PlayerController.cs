@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Input;
+using UnityEngine.EventSystems;
 
 public class PlayerController : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class PlayerController : MonoBehaviour
     // All of the veribles that effects the UI On The Character
     RadialMenu radialMenu;
     [SerializeField] Canvas radialMenuCanvas;
-    [SerializeField] Canvas pauseMenu;
+    PauseMenu pauseMenu;
     bool inUI = false;
     bool gamePaused;
 
@@ -41,10 +42,12 @@ public class PlayerController : MonoBehaviour
     public Telekinesis telekinesis;
     public CameraRaycast cameraRaycast;
     public Fireball fireball;
+    EventSystem eventSystem;
 
     // sets inputed movement speed to the inputed speed and sets up all on input performed events.
     private void Awake()
     {
+
         inputedMovementSpeed = movementSpeed;
         controls.Player.Movement.performed += ctx => updateKeyborad(ctx.ReadValue<Vector2>(), ctx.control.device);
         controls.Player.MovementGamepad.performed += ctx => updateGamepad(ctx.ReadValue<Vector2>(), ctx.control.device);
@@ -57,6 +60,8 @@ public class PlayerController : MonoBehaviour
         controls.Player.Crouch.performed += ctx => crouch();
         controls.Player.OpenRadialMenu.started += ctx => openRadialMenu();
         controls.Player.OpenRadialMenu.cancelled += ctx => closeRadialMenu();
+        controls.Player.Pause.performed += ctx => pause();
+        controls.Player.UIconfirmation.performed += ctx => Confirmation();
 
         // Sets all vaules that are required at awake
         telekinesis = this.GetComponent<Telekinesis>();
@@ -69,6 +74,9 @@ public class PlayerController : MonoBehaviour
         //Sets all vaules for the UI that are required at start.
         radialMenu = GetComponent<RadialMenu>();
         radialMenuCanvas.enabled = false;
+        pauseMenu = GameObject.FindObjectOfType<PauseMenu>();
+        eventSystem = GameObject.FindObjectOfType<EventSystem>();
+        Object.DontDestroyOnLoad(this);
     }
 
     // When called changes the move of the player based on inputs from the keyborad.
@@ -141,9 +149,12 @@ public class PlayerController : MonoBehaviour
     // When called launches the player into the air.
     void jump()
     {
-        if (isGrounded)
+        if (!pauseMenu.GameIsPaused)
         {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            if (isGrounded)
+            {
+                velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            }
         }
     }
 
@@ -267,6 +278,26 @@ public class PlayerController : MonoBehaviour
             radialMenu.Close();
             inUI = false;
         }
+    }
+
+    // When called toggles between having the game paused and unpaused
+    void pause()
+    {
+        if (pauseMenu.GameIsPaused)
+        {
+            pauseMenu.Resume();
+        }
+        else
+        {
+            pauseMenu.Pause();
+        }
+    }
+
+    // When the player press the south gamepad button this is called which then tells the event system to trigger teh selected button.
+    void Confirmation()
+    {
+        GameObject currentlySelected = eventSystem.currentSelectedGameObject;
+        ExecuteEvents.Execute(currentlySelected, new BaseEventData(eventSystem), ExecuteEvents.submitHandler);
     }
 
     // This are used to enable and disable the controls.

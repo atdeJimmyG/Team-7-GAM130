@@ -54,7 +54,6 @@ public class Telekinesis : MonoBehaviour
 
             if (hit.collider.gameObject == objectIHave)
             {
-                Debug.Log("Dropped because box was stood on");
                 dropObject();
             }
         }      
@@ -121,7 +120,6 @@ public class Telekinesis : MonoBehaviour
         if (shouldCharge)
         {
             throwForce += 1;
-            Debug.Log(throwForce);
             Invoke("updateForce", .1f);
         }
 
