@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class DestroyObjectWall : MonoBehaviour
 {
-    public PlayerController controller;
+    private PlayerController controller;
+
+    private void Start()
+    {
+        controller = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+    }
 
     void OnTriggerEnter(Collider block)
     {

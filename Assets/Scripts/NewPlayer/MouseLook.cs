@@ -6,7 +6,8 @@ using UnityEngine.Experimental.Input;
 public class MouseLook : MonoBehaviour
 {
     public InputMaster controls;
-    public Transform playerBody;
+    private static GameObject player;
+    private Transform playerBody;
 
     public float mouseSensitivity = 0f;
     public float gamepadSens = 0f;
@@ -15,7 +16,6 @@ public class MouseLook : MonoBehaviour
 
     private void Awake()
     {
-
         controls.Player.Look.performed += context => updateCameraPos(context.ReadValue<Vector2>(), context.control.device);
     }
 
@@ -48,6 +48,12 @@ public class MouseLook : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerBody.Rotate(Vector3.up * mouse.x);
+    }
+
+    public void spawned()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerBody = player.GetComponent<Transform>();
     }
 
     // Start is called before the first frame update

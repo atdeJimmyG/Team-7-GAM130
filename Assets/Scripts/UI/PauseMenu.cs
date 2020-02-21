@@ -9,8 +9,13 @@ public class PauseMenu : MonoBehaviour
 {
     public bool GameIsPaused = false;
     // Public flag, so can be used whenever to check if the game is paused
-    public SceneFader scenefader;
+    private SceneFader scenefader;
     public Canvas pauseMenuUI;
+
+    private void Awake()
+    {
+        scenefader = GameObject.FindGameObjectWithTag("SceneFader").GetComponent<SceneFader>();
+    }
 
     void Update()
     {
@@ -50,6 +55,7 @@ public class PauseMenu : MonoBehaviour
     {
         Resume();
         scenefader.fadeTo("MainMenu");
+        Destroy(GameObject.FindGameObjectWithTag("Player"));
     }
     // Loads the "MainMenu" scene
 }
