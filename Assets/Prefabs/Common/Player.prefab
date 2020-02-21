@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5676646900171981709}
   - component: {fileID: 5676646900171981711}
   - component: {fileID: 5676646900171981708}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5676646900179953020}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -196,7 +196,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5676646900307490687}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: HoldPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 5676646900517323541}
   - component: {fileID: 5676646900517323546}
   - component: {fileID: 5676646900517323543}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -315,7 +315,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controls:
     m_Asset: {fileID: 11400000, guid: e065831804838734ba6f53ff641d8c43, type: 3}
-  playerBody: {fileID: 5676646901838577290}
   mouseSensitivity: 3
   gamepadSens: 2
 --- !u!1 &5676646900545017398
@@ -330,7 +329,7 @@ GameObject:
   - component: {fileID: 5676646900545017394}
   - component: {fileID: 5676646900545017395}
   - component: {fileID: 5676646900545017392}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: RadialMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -432,7 +431,7 @@ GameObject:
   - component: {fileID: 5676646900631535697}
   - component: {fileID: 5676646900631535702}
   - component: {fileID: 5676646900631535703}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: ExitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -581,7 +580,7 @@ GameObject:
   - component: {fileID: 5676646900652255335}
   - component: {fileID: 5676646900652255328}
   - component: {fileID: 5676646900652255329}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -695,7 +694,7 @@ GameObject:
   - component: {fileID: 5676646900653917727}
   - component: {fileID: 5676646900653917724}
   - component: {fileID: 5676646900653917725}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: PauseMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -797,7 +796,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameIsPaused: 0
-  scenefader: {fileID: 0}
   pauseMenuUI: {fileID: 5676646900653917726}
 --- !u!1 &5676646901078863947
 GameObject:
@@ -812,7 +810,7 @@ GameObject:
   - component: {fileID: 5676646901078863943}
   - component: {fileID: 5676646901078863940}
   - component: {fileID: 5676646901078863941}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: ResumeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -961,7 +959,7 @@ GameObject:
   - component: {fileID: 5676646901088488658}
   - component: {fileID: 5676646901088488659}
   - component: {fileID: 5676646901088488656}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: OptionsMenuButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1099,7 +1097,7 @@ GameObject:
   - component: {fileID: 5676646901320744094}
   - component: {fileID: 5676646901320744091}
   - component: {fileID: 5676646901320744088}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1211,7 +1209,7 @@ GameObject:
   - component: {fileID: 5676646901456274928}
   - component: {fileID: 5676646901456274930}
   - component: {fileID: 5676646901456274931}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1371,7 +1369,7 @@ GameObject:
   - component: {fileID: 5676646901838577284}
   - component: {fileID: 5676646901838577287}
   - component: {fileID: 5676646901838577286}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1456,12 +1454,13 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   radialMenuCanvas: {fileID: 5676646900545017394}
+  inUI: 0
   gravity: -29.43
   groundCheck: {fileID: 5676646900179953020}
   groundDistance: 0.4
   groundMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 257
   jumpHeight: 1
   telekinesis: {fileID: 0}
   cameraRaycast: {fileID: 0}
@@ -1571,7 +1570,7 @@ GameObject:
   - component: {fileID: 5676646901879782544}
   - component: {fileID: 5676646901879782573}
   - component: {fileID: 5676646901879782546}
-  m_Layer: 5
+  m_Layer: 1
   m_Name: 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1683,7 +1682,7 @@ GameObject:
   - component: {fileID: 5676646902029355664}
   - component: {fileID: 5676646902029355666}
   - component: {fileID: 5676646902029355667}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
