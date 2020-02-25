@@ -7,6 +7,7 @@ public class FireballDetonate : MonoBehaviour
     private float lifespan = 2f;
     private void OnCollisionEnter()
     {
+        Debug.Log("KMS");
         //Upon colliding with anything the fireball will detonate
         Destroy(gameObject);
     }

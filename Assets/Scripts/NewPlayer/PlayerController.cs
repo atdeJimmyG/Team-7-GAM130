@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
     public Telekinesis telekinesis;
     public CameraRaycast cameraRaycast;
     public Fireball fireball;
+    public Freezeshot freezeshot;
     EventSystem eventSystem;
 
     // sets inputed movement speed to the inputed speed and sets up all on input performed events.
@@ -64,9 +65,10 @@ public class PlayerController : MonoBehaviour
         controls.Player.UIconfirmation.performed += ctx => Confirmation();
 
         // Sets all vaules that are required at awake
-        telekinesis = this.GetComponent<Telekinesis>();
-        cameraRaycast = this.GetComponent<CameraRaycast>();
-        fireball = this.GetComponent<Fireball>();
+        telekinesis = GetComponent<Telekinesis>();
+        cameraRaycast = GetComponent<CameraRaycast>();
+        fireball = GetComponent<Fireball>();
+        freezeshot = GetComponent<Freezeshot>();
     }
 
     private void Start()
@@ -213,6 +215,11 @@ public class PlayerController : MonoBehaviour
             {
                 telekinesis.dropObject();
             }
+        }
+        else if (freezeshot.enabled == true)
+        {
+            Debug.Log("FGSCHgfjdg");
+            freezeshot.FireTest();
         }
         else if (fireball.enabled == true)
         {
