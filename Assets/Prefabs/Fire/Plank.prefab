@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 947786632585706397}
   - component: {fileID: 947786632585706396}
   - component: {fileID: 947786632585706395}
-  - component: {fileID: 947786632585706394}
+  - component: {fileID: 1808890271477531782}
+  - component: {fileID: 1894800990163425515}
   m_Layer: 0
   m_Name: Plank
   m_TagString: Untagged
@@ -294,8 +295,8 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!64 &947786632585706394
-MeshCollider:
+--- !u!65 &1808890271477531782
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -304,7 +305,18 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.10000016, y: 3.0000005, z: 0.3000001}
+  m_Center: {x: 0.049999945, y: 1.5, z: -0.15000005}
+--- !u!114 &1894800990163425515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947786632585706393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3705807e8b9cdb442a4daa0105c21224, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
