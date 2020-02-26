@@ -12,6 +12,8 @@ public class MouseLook : MonoBehaviour
     public float mouseSensitivity = 0f;
     public float gamepadSens = 0f;
 
+    public bool Disabled = false;
+
     private float xRotation = 0f;
 
     private void Awake()
@@ -31,23 +33,25 @@ public class MouseLook : MonoBehaviour
 
     void updateCameraPos(Vector2 mouse, UnityEngine.Experimental.Input.InputDevice context)
     {
-
-        if (context.device is Gamepad)
+        if (!Disabled)
         {
-            mouse.x = mouse.x * gamepadSens;
-            mouse.y = mouse.y * gamepadSens;
-        }
-        else
-        {
-            mouse.x = mouse.x * mouseSensitivity * Time.deltaTime;
-            mouse.y = mouse.y * mouseSensitivity * Time.deltaTime;
-        }
+            if (context.device is Gamepad)
+            {
+                mouse.x = mouse.x * gamepadSens;
+                mouse.y = mouse.y * gamepadSens;
+            }
+            else
+            {
+                mouse.x = mouse.x * mouseSensitivity * Time.deltaTime;
+                mouse.y = mouse.y * mouseSensitivity * Time.deltaTime;
+            }
 
-        xRotation -= mouse.y;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+            xRotation -= mouse.y;
+            xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        playerBody.Rotate(Vector3.up * mouse.x);
+            transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+            playerBody.Rotate(Vector3.up * mouse.x);
+        }
     }
 
     public void spawned()

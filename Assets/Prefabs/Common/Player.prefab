@@ -317,6 +317,7 @@ MonoBehaviour:
     m_Asset: {fileID: 11400000, guid: e065831804838734ba6f53ff641d8c43, type: 3}
   mouseSensitivity: 3
   gamepadSens: 2
+  Disabled: 0
 --- !u!1 &5676646900545017398
 GameObject:
   m_ObjectHideFlags: 0
@@ -1465,6 +1466,8 @@ MonoBehaviour:
   telekinesis: {fileID: 0}
   cameraRaycast: {fileID: 0}
   fireball: {fileID: 0}
+  freezeshot: {fileID: 0}
+  mouseLook: {fileID: 0}
 --- !u!114 &5676646901838577284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1531,6 +1534,7 @@ MonoBehaviour:
     HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
     PressedColor: {r: 0, g: 0, b: 0, a: 1}
     Spell: Null
+  MousePos: {x: 0, y: 0}
   MenuItems: 0
   CurrentMenuItem: 0
   curve:

@@ -8,7 +8,7 @@ public class RadialMenu : MonoBehaviour
 {
     public GameObject Player;
     public List<MenuButton> Buttons = new List<MenuButton>();
-    private Vector2 MousePos;
+    public Vector2 MousePos;
     private Vector2 FromVector2 = new Vector2(.5f, 1f);
     private Vector2 CenterCircle = new Vector2(.5f, .5f);
     private Vector2 ToVector;
@@ -17,7 +17,7 @@ public class RadialMenu : MonoBehaviour
     public int CurrentMenuItem;
     private int OldMenuItem;
     public AnimationCurve curve;
-    private bool open = false;
+    public bool open = false;
     private List<string> Spells = new List<string>();
     private Telekinesis Telekinesis;
     private Fireball Fire;
@@ -67,15 +67,15 @@ public class RadialMenu : MonoBehaviour
 
     public void GetCurrentMenuItem()
     {
-        MousePos.x = Input.mousePosition.x - (Screen.width / 2f);
-        MousePos.y = Input.mousePosition.y - (Screen.height / 2f);
-        MousePos.Normalize();
+        //MousePos.x = MousePos.x - (Screen.width / 2f);
+        //MousePos.y = MousePos.y - (Screen.height / 2f);
+        //MousePos.Normalize();
 
         if(MousePos != Vector2.zero)
         {
             float angle = Mathf.Atan2(MousePos.y, -MousePos.x) / Mathf.PI;
             angle *= 180;
-            angle -= 90f;
+            //angle -= 90f;
             if(angle < 0)
             {
                 angle += 360;

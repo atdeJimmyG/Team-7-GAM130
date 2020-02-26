@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour
     public CameraRaycast cameraRaycast;
     public Fireball fireball;
     public Freezeshot freezeshot;
+    public MouseLook mouseLook;
     EventSystem eventSystem;
 
     // sets inputed movement speed to the inputed speed and sets up all on input performed events.
@@ -63,12 +64,14 @@ public class PlayerController : MonoBehaviour
         controls.Player.OpenRadialMenu.cancelled += ctx => closeRadialMenu();
         controls.Player.Pause.performed += ctx => pause();
         controls.Player.UIconfirmation.performed += ctx => Confirmation();
+        controls.Player.Look.performed += ctx => radialMenuNav(ctx.ReadValue<Vector2>());
 
         // Sets all vaules that are required at awake
         telekinesis = GetComponent<Telekinesis>();
         cameraRaycast = GetComponent<CameraRaycast>();
         fireball = GetComponent<Fireball>();
         freezeshot = GetComponent<Freezeshot>();
+        mouseLook = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<MouseLook>();
     }
 
     private void Start()
@@ -150,7 +153,7 @@ public class PlayerController : MonoBehaviour
     // When called launches the player into the air.
     void jump()
     {
-        if (!pauseMenu.GameIsPaused)
+        if (!inUI)
         {
             if (isGrounded)
             {
@@ -271,6 +274,7 @@ public class PlayerController : MonoBehaviour
         {
             radialMenuCanvas.enabled = true;
             radialMenu.Open();
+            mouseLook.Disabled = true;
             inUI = true;
         }
     }
@@ -282,7 +286,20 @@ public class PlayerController : MonoBehaviour
         {
             radialMenuCanvas.enabled = false;
             radialMenu.Close();
+            mouseLook.Disabled = false;
             inUI = false;
+            radialMenu.MousePos.x = 0f;
+            radialMenu.MousePos.y = 0f;
+        }
+    }
+
+    void radialMenuNav(Vector2 loc)
+    {
+        if (inUI)
+        {
+            radialMenu.MousePos.x = loc.x;
+            radialMenu.MousePos.y = loc.y;
+            //(Screen.width / 2f);
         }
     }
 
@@ -308,6 +325,11 @@ public class PlayerController : MonoBehaviour
         {
             GameObject currentlySelected = eventSystem.currentSelectedGameObject;
             ExecuteEvents.Execute(currentlySelected, new BaseEventData(eventSystem), ExecuteEvents.submitHandler);
+
+            if (radialMenu.open == true)
+            {
+                radialMenu.ButtonAction();
+            }
         }
     }
 
