@@ -13,6 +13,7 @@ public class SceneFader : MonoBehaviour
     [SerializeField] GameObject background;
     Image fillImage;
     Image backgroundImage;
+    GameObject player;
 
     private void Awake()
     {
@@ -23,6 +24,7 @@ public class SceneFader : MonoBehaviour
     void Start()
     {
         StartCoroutine(fadeIn());
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     IEnumerator fadeIn ()
@@ -78,7 +80,8 @@ public class SceneFader : MonoBehaviour
         if (operation.isDone)
         {
             loadBar.enabled = false;
-            Destroy(GameObject.FindGameObjectWithTag("Player"));
+            Destroy(player);
+            Debug.Log("Player Destroyed");
         }
 
     }
@@ -113,7 +116,7 @@ public class SceneFader : MonoBehaviour
         if (operation.isDone)
         {
             loadBar.enabled = false;
-            Destroy(GameObject.FindGameObjectWithTag("Player"));
+            Destroy(player);
         }
 
     }

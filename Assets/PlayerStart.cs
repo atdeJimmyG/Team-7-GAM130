@@ -12,7 +12,7 @@ public class PlayerStart : MonoBehaviour
     {
         // Instantiate at position of the game object and zero rotation.
         Instantiate(player, this.gameObject.transform.position, Quaternion.identity);
-        MouseLook temp = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<MouseLook>();
+        MouseLookNew temp = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<MouseLookNew>();
         temp.spawned();
     }
 }

@@ -36,14 +36,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float jumpHeight = 3f;
     Vector3 velocity;
     private bool isGrounded;
-
+    private float viberationSpeed = .1f;
+    [SerializeField] private bool viberation = false;
 
     // Store all Scripts that need to be refed on that are on the player
     public Telekinesis telekinesis;
     public CameraRaycast cameraRaycast;
     public Fireball fireball;
     public Freezeshot freezeshot;
-    public MouseLook mouseLook;
+    public MouseLookNew mouseLook;
     EventSystem eventSystem;
 
     // sets inputed movement speed to the inputed speed and sets up all on input performed events.
@@ -71,7 +72,7 @@ public class PlayerController : MonoBehaviour
         cameraRaycast = GetComponent<CameraRaycast>();
         fireball = GetComponent<Fireball>();
         freezeshot = GetComponent<Freezeshot>();
-        mouseLook = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<MouseLook>();
+        mouseLook = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<MouseLookNew>();
     }
 
     private void Start()
@@ -240,6 +241,7 @@ public class PlayerController : MonoBehaviour
             {
                 telekinesis.shouldCharge = true;
                 telekinesis.updateForce();
+                viberation = true;
             }
         }
         else if (fireball.enabled == true)
@@ -255,6 +257,9 @@ public class PlayerController : MonoBehaviour
         {
             telekinesis.shouldCharge = false;
             telekinesis.shootObject();
+            Gamepad.current.SetMotorSpeeds(0f, 0f);
+            viberationSpeed = .1f;
+            viberation = false;
         }
     }
 
@@ -369,5 +374,12 @@ public class PlayerController : MonoBehaviour
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+
+        if (viberation)
+        {
+            Gamepad.current.SetMotorSpeeds(viberationSpeed, viberationSpeed);
+            viberationSpeed += .005f;
+            Debug.Log(viberationSpeed);
+        }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Input;
 
-public class MouseLook : MonoBehaviour
+public class MouseLookNew : MonoBehaviour
 {
     public InputMaster controls;
     private static GameObject player;
@@ -29,6 +29,12 @@ public class MouseLook : MonoBehaviour
     private void OnDisable()
     {
         controls.Disable();
+    }
+
+    void OnDestroy()
+    {
+        controls.Disable();
+        Debug.Log("Controls Disabled Bcecasue Player Was Destroyed");
     }
 
     void updateCameraPos(Vector2 mouse, UnityEngine.Experimental.Input.InputDevice context)
