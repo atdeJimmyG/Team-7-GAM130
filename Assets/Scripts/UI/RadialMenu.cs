@@ -21,6 +21,7 @@ public class RadialMenu : MonoBehaviour
     private List<string> Spells = new List<string>();
     private Telekinesis Telekinesis;
     private Fireball Fire;
+    public string CurrentSpell;
 
     private void Start()
     {
@@ -57,11 +58,11 @@ public class RadialMenu : MonoBehaviour
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
             GetCurrentMenuItem();
-            string CurrentSpell = Spells[CurrentMenuItem];
-            if (Input.GetMouseButtonDown(0))
-            {
-                ButtonAction(CurrentSpell);
-            }
+            CurrentSpell = Spells[CurrentMenuItem];
+            //if (Input.GetMouseButtonDown(0))
+            //{
+            //    ButtonAction(CurrentSpell);
+            //}
         }       
     }
 

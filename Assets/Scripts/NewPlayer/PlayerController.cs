@@ -219,14 +219,15 @@ public class PlayerController : MonoBehaviour
                 telekinesis.dropObject();
             }
         }
-        else if (freezeshot.enabled == true)
-        {
-            Debug.Log("FGSCHgfjdg");
-            freezeshot.FireTest();
-        }
         else if (fireball.enabled == true)
         {
             fireball.FireTest();
+            Debug.Log("Fireball");
+        }
+        else if (freezeshot.enabled == true)
+        {
+            Debug.Log("FreezeShot");
+            freezeshot.FireTest();
         }
     }
 
@@ -323,12 +324,14 @@ public class PlayerController : MonoBehaviour
     {
         if (inUI)
         {
-            GameObject currentlySelected = eventSystem.currentSelectedGameObject;
-            ExecuteEvents.Execute(currentlySelected, new BaseEventData(eventSystem), ExecuteEvents.submitHandler);
-
             if (radialMenu.open == true)
             {
-                //radialMenu.ButtonAction();
+                radialMenu.ButtonAction(radialMenu.CurrentSpell);
+            }
+            else if (pauseMenu.GameIsPaused)
+            {
+                GameObject currentlySelected = eventSystem.currentSelectedGameObject;
+                ExecuteEvents.Execute(currentlySelected, new BaseEventData(eventSystem), ExecuteEvents.submitHandler);
             }
         }
     }
@@ -368,4 +371,3 @@ public class PlayerController : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
     }
 }
-
