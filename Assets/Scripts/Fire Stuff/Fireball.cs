@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityStandardAssets.Characters.FirstPerson;
 
 //This script handles the launching of fireballs
 public class Fireball : MonoBehaviour

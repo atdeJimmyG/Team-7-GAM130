@@ -10,7 +10,10 @@ public class NextLevel : MonoBehaviour
 
     void OnTriggerEnter(Collider player)
     {
-        fader.fadeTo(NextLevelName);
-        PlayerPrefs.SetInt("levelReached", NextLevelIndex);
+        if (player.gameObject.tag == "Player")
+        {
+            fader.fadeTo(NextLevelName);
+            PlayerPrefs.SetInt("levelReached", NextLevelIndex);
+        }
     }
 }

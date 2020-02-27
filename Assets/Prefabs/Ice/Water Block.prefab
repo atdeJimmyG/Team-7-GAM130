@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1107683186472799970}
   - component: {fileID: 1107683186472799971}
   - component: {fileID: 4347100542606952320}
+  - component: {fileID: 7370719073716192755}
   m_Layer: 0
   m_Name: Water Block
   m_TagString: Freezable
@@ -122,3 +123,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NewMaterial: {fileID: 2100000, guid: daf021628a918264a820b5efa626118e, type: 2}
+--- !u!114 &7370719073716192755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107683186472799965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 905bc81ed228ec94abda1c58df18a766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NewMaterial: {fileID: 2100000, guid: 7224ae8028f742e4bb5c8b9bb0b29fb1, type: 2}

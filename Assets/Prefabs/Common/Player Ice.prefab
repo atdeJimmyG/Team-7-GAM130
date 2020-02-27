@@ -129,6 +129,7 @@ GameObject:
   - component: {fileID: 2625055284501050030}
   - component: {fileID: 881248180219866715}
   - component: {fileID: 3479987574657002112}
+  - component: {fileID: 4875931178918217042}
   m_Layer: 1
   m_Name: Player Ice
   m_TagString: Player
@@ -225,6 +226,8 @@ MonoBehaviour:
   telekinesis: {fileID: 0}
   cameraRaycast: {fileID: 0}
   fireball: {fileID: 0}
+  freezeshot: {fileID: 0}
+  mouseLook: {fileID: 0}
 --- !u!114 &2625055284501050031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,6 +273,7 @@ MonoBehaviour:
     HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
     PressedColor: {r: 0, g: 0, b: 0, a: 1}
     Spell: Null
+  MousePos: {x: 0, y: 0}
   MenuItems: 0
   CurrentMenuItem: 0
   curve:
@@ -296,6 +300,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  open: 0
 --- !u!114 &881248180219866715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,6 +336,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   position: {fileID: 2625055285830668092}
   freezeshot: {fileID: 7120018962507482616, guid: 3e2d1ed50b902fc4ba6faf2af6a2976d,
+    type: 3}
+  speed: 5
+  coolDownTime: 1
+  player: {fileID: 2625055284501050029}
+--- !u!114 &4875931178918217042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2625055284501050016}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04a7d9659f0cf0344abe8e18842afb89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: {fileID: 2625055286292708183}
+  fireball: {fileID: 1786035138422053335, guid: 5bd34f78a4070684b83489a468900185,
     type: 3}
   speed: 5
   coolDownTime: 1
@@ -1251,6 +1274,7 @@ MonoBehaviour:
     m_Asset: {fileID: 11400000, guid: e065831804838734ba6f53ff641d8c43, type: 3}
   mouseSensitivity: 3
   gamepadSens: 2
+  Disabled: 0
 --- !u!1 &2625055285964285005
 GameObject:
   m_ObjectHideFlags: 0
