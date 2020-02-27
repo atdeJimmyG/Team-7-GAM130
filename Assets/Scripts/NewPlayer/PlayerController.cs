@@ -328,7 +328,7 @@ public class PlayerController : MonoBehaviour
 
             if (radialMenu.open == true)
             {
-                radialMenu.ButtonAction();
+                //radialMenu.ButtonAction();
             }
         }
     }
