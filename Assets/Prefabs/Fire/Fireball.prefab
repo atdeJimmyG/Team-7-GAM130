@@ -266,7 +266,7 @@ PrefabInstance:
     - target: {fileID: 8098134207015455244, guid: 6e6d9a7bedd87014daf2cfa05cef89ab,
         type: 3}
       propertyPath: prewarm
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8098134207015455244, guid: 6e6d9a7bedd87014daf2cfa05cef89ab,
         type: 3}
@@ -286,7 +286,7 @@ PrefabInstance:
     - target: {fileID: 8098134207015455244, guid: 6e6d9a7bedd87014daf2cfa05cef89ab,
         type: 3}
       propertyPath: ShapeModule.radiusThickness
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8098134207015455244, guid: 6e6d9a7bedd87014daf2cfa05cef89ab,
         type: 3}

@@ -11,6 +11,8 @@ TagManager:
   - Scale
   - Freezable
   - Ice
+  - Destructable
+  - Explosion
   layers:
   - Default
   - TransparentFX

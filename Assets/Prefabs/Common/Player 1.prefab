@@ -317,6 +317,7 @@ MonoBehaviour:
     m_Asset: {fileID: 11400000, guid: e065831804838734ba6f53ff641d8c43, type: 3}
   mouseSensitivity: 3
   gamepadSens: 2
+  Disabled: 0
 --- !u!1 &5676646900545017398
 GameObject:
   m_ObjectHideFlags: 0
@@ -1370,6 +1371,8 @@ GameObject:
   - component: {fileID: 5676646901838577287}
   - component: {fileID: 5676646901838577286}
   - component: {fileID: 3819877309971057266}
+  - component: {fileID: 5053034055369853374}
+  - component: {fileID: 7437711082976205513}
   m_Layer: 1
   m_Name: Player 1
   m_TagString: Player
@@ -1463,9 +1466,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 257
   jumpHeight: 1
+  viberation: 0
   telekinesis: {fileID: 0}
   cameraRaycast: {fileID: 0}
   fireball: {fileID: 0}
+  firespray: {fileID: 0}
+  freezeshot: {fileID: 0}
+  mouseLook: {fileID: 0}
 --- !u!114 &5676646901838577284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1532,6 +1539,7 @@ MonoBehaviour:
     HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
     PressedColor: {r: 0, g: 0, b: 0, a: 1}
     Spell: Null
+  MousePos: {x: 0, y: 0}
   MenuItems: 0
   CurrentMenuItem: 0
   curve:
@@ -1558,6 +1566,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  open: 0
+  CurrentSpell: 
 --- !u!114 &3819877309971057266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1576,6 +1586,39 @@ MonoBehaviour:
   speed: 5
   coolDownTime: 1
   player: {fileID: 5676646901838577285}
+--- !u!114 &5053034055369853374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5676646901838577288}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dda2eca724299f4494a26b5cabeb023, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: {fileID: 0}
+  firespray: {fileID: 0}
+  coolDownTime: 1
+  player: {fileID: 0}
+--- !u!114 &7437711082976205513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5676646901838577288}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c34c0f1f0805d52409d7f193f92a314c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: {fileID: 0}
+  freezeshot: {fileID: 0}
+  speed: 5
+  coolDownTime: 1
+  player: {fileID: 0}
 --- !u!1 &5676646901879782550
 GameObject:
   m_ObjectHideFlags: 0
