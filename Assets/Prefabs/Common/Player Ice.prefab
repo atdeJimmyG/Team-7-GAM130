@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 881248180219866715}
   - component: {fileID: 3479987574657002112}
   - component: {fileID: 4875931178918217042}
+  - component: {fileID: 5524375257569814820}
   m_Layer: 1
   m_Name: Player Ice
   m_TagString: Player
@@ -349,7 +350,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2625055284501050016}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04a7d9659f0cf0344abe8e18842afb89, type: 3}
   m_Name: 
@@ -358,6 +359,23 @@ MonoBehaviour:
   fireball: {fileID: 1786035138422053335, guid: 5bd34f78a4070684b83489a468900185,
     type: 3}
   speed: 5
+  coolDownTime: 1
+  player: {fileID: 2625055284501050029}
+--- !u!114 &5524375257569814820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2625055284501050016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dda2eca724299f4494a26b5cabeb023, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: {fileID: 2625055286292708183}
+  firespray: {fileID: 228875055356774824, guid: 8d31d28f967b459438251cabfedabeae,
+    type: 3}
   coolDownTime: 1
   player: {fileID: 2625055284501050029}
 --- !u!1 &2625055284591232697

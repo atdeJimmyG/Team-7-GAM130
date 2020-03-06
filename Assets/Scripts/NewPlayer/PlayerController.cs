@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour
     public Telekinesis telekinesis;
     public CameraRaycast cameraRaycast;
     public Fireball fireball;
+    public FireSpray firespray;
     public Freezeshot freezeshot;
     public MouseLookNew mouseLook;
     EventSystem eventSystem;
@@ -71,6 +72,7 @@ public class PlayerController : MonoBehaviour
         telekinesis = GetComponent<Telekinesis>();
         cameraRaycast = GetComponent<CameraRaycast>();
         fireball = GetComponent<Fireball>();
+        firespray = GetComponent<FireSpray>();
         freezeshot = GetComponent<Freezeshot>();
         mouseLook = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<MouseLookNew>();
     }
@@ -219,6 +221,11 @@ public class PlayerController : MonoBehaviour
             {
                 telekinesis.dropObject();
             }
+        }
+        else if (firespray.enabled == true)
+        {
+            firespray.FireTest();
+            Debug.Log("FireSpray");
         }
         else if (fireball.enabled == true)
         {
