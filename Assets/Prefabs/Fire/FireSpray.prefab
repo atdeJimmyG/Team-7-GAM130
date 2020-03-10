@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6689059115247643661}
   - component: {fileID: 2880359218341986658}
   - component: {fileID: 5850148367441812806}
+  - component: {fileID: 6610461646368907640}
   m_Layer: 0
   m_Name: FireSpray
   m_TagString: Fire
@@ -131,3 +132,16 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &6610461646368907640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228875055356774824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ce6c4bb7a7fc946809e83db53d1dce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2625055284501050016, guid: ab4ab7765dc87ac4d90e767dcb750763, type: 3}

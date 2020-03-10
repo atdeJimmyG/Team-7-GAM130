@@ -21,8 +21,6 @@ public class FireSpray : MonoBehaviour
     // pause menu ref used to then check if the player is in the UI
     public PlayerController player;
 
-    float tiltAngle = 90f;
-
     bool testing = true;
 
     void Update()
