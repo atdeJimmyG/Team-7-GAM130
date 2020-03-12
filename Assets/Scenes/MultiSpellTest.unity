@@ -1175,7 +1175,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28632
+  m_Name: pb_Mesh28582
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -3806,11 +3806,11 @@ GameObject:
   - component: {fileID: 1374642766}
   - component: {fileID: 1374642765}
   - component: {fileID: 1374642764}
-  - component: {fileID: 1374642763}
   - component: {fileID: 1374642762}
+  - component: {fileID: 1374642763}
   m_Layer: 0
   m_Name: BurnablePillar
-  m_TagString: Fire
+  m_TagString: Burnable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3841,8 +3841,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3705807e8b9cdb442a4daa0105c21224, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!64 &1374642763
-MeshCollider:
+--- !u!65 &1374642763
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3851,10 +3851,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 374144882}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 3, z: 1}
+  m_Center: {x: 0.5, y: 1.5, z: -0.5}
 --- !u!114 &1374642764
 MonoBehaviour:
   m_ObjectHideFlags: 0

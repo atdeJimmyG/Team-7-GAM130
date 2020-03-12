@@ -22,4 +22,12 @@ public class FireSprayActive : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Burnable")
+        {
+            Destroy(other.gameObject);
+        }
+    }
 }

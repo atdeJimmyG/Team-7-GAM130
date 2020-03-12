@@ -55,5 +55,4 @@ public class FireSpray : MonoBehaviour
     {
         Instantiate(firespray, position.position, position.rotation);
     }
-
 }
