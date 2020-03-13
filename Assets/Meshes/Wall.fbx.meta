@@ -5,7 +5,7 @@ ModelImporter:
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: lambert2
+    2100000: StoneWall
     2300000: //RootNode
     3300000: //RootNode
     4300000: Wall
@@ -13,7 +13,7 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: lambert2
+      name: StoneWall
     second: {fileID: 2100000, guid: fc8c59c574aca2044b7d225bf10b846b, type: 2}
   materials:
     importMaterials: 1
