@@ -14,6 +14,8 @@ public class FireballDetonate : MonoBehaviour
     void Start()
     {
         //If the fireball is still around <lifespan> seconds after being launched, it will be detonate on its own
+        transform.Rotate(90, 0, 0);
         Destroy(gameObject, lifespan);
+
     }
 }
