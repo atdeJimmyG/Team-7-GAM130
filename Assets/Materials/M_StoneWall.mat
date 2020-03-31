@@ -11,7 +11,7 @@ Material:
   m_Shader: {fileID: 47, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP _SPECGLOSSMAP
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -37,11 +37,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 0.7, y: 1}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: -0.01, y: -0.35}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: fd263641cf23ab74ab457017d750d740, type: 3}
-        m_Scale: {x: 0.7, y: 1}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: -0.01, y: -0.35}
     - _MetallicGlossMap:
         m_Texture: {fileID: 2800000, guid: 9874844e83098af4c9e66d52630cefde, type: 3}
