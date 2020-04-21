@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     bool crouched = false;
     float height = 1.8f;
 
+
     // All of the veribles that effects the UI On The Character
     RadialMenu radialMenu;
     [SerializeField] Canvas radialMenuCanvas;
@@ -75,6 +76,9 @@ public class PlayerController : MonoBehaviour
         firespray = GetComponent<FireSpray>();
         freezeshot = GetComponent<Freezeshot>();
         mouseLook = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<MouseLookNew>();
+
+        //Audio Manager
+        SoundManager.Initialize();
     }
 
     private void Start()
@@ -97,10 +101,11 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+
             x = input.x;
             z = input.y;
         }
-
+        
         if (input.x < 0f || input.y < 0f)
         {
             neverDone = false;
@@ -108,9 +113,17 @@ public class PlayerController : MonoBehaviour
         else if (input.x > 0f || input.y > 0f)
             neverDone = false;
 
+
+
         if (input.x == 0 && input.y == 0)
         {
             isKeyborad = false;
+
+        }
+
+        bool isIdle = x == 0 && z == 0;
+        if (!isIdle) {
+            SoundManager.PlaySound(SoundManager.Sound.PlayerMove);
         }
     }
     
@@ -159,7 +172,7 @@ public class PlayerController : MonoBehaviour
         if (!inUI)
         {
             if (isGrounded)
-            {
+            {                
                 velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             }
         }
@@ -209,7 +222,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // When called based on what spell is currently active and does the corret action.
-    void primaryAction()
+    public void primaryAction()
     {
         if (telekinesis.enabled == true)
         {
@@ -224,12 +237,14 @@ public class PlayerController : MonoBehaviour
         }
         else if (firespray.enabled == true)
         {
+            
             firespray.FireTest();
             Debug.Log("FireSpray");
         }
         else if (fireball.enabled == true)
         {
             fireball.FireTest();
+            SoundManager.PlaySound(SoundManager.Sound.PlayerFire);
             Debug.Log("Fireball");
         }
         else if (freezeshot.enabled == true)
@@ -367,9 +382,11 @@ public class PlayerController : MonoBehaviour
         {
             velocity.y = -2f;
         }
+        
 
         if (neverDone)
         {
+            
             x = 0f;
             z = 0f;
             movementSpeed = inputedMovementSpeed;

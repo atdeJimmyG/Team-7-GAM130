@@ -8,8 +8,7 @@ public class Fireball : MonoBehaviour
     private Transform position;
 
     //This allows the fireball prefab to be used as a variable in the script after attachment via the Unity Editor
-    [SerializeField]
-    private GameObject fireball;
+    public GameObject fireball;
 
     //"Speed" is how fast the fireball will travel
     [SerializeField]
@@ -57,8 +56,11 @@ public class Fireball : MonoBehaviour
     //"FireFire" is the part that actually creates and propels the fireball
     private void FireFire()
     {
+
+        
         GameObject firedBall = Instantiate(fireball, position.position, position.rotation);
         firedBall.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * speed);
+
     }
 
 }
