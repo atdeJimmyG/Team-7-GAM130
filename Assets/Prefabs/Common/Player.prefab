@@ -1367,6 +1367,7 @@ GameObject:
   - component: {fileID: 5676646901838577290}
   - component: {fileID: 5676646901838577291}
   - component: {fileID: 5676646901838577285}
+  - component: {fileID: 8272585872402624469}
   - component: {fileID: 5676646901838577284}
   - component: {fileID: 5676646901838577287}
   - component: {fileID: 5676646901838577286}
@@ -1463,11 +1464,27 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 257
   jumpHeight: 1
+  viberation: 0
   telekinesis: {fileID: 0}
   cameraRaycast: {fileID: 0}
   fireball: {fileID: 0}
+  firespray: {fileID: 0}
   freezeshot: {fileID: 0}
   mouseLook: {fileID: 0}
+--- !u!114 &8272585872402624469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5676646901838577288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd08ffbce9c26844993fa940c446b3c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cube: {fileID: 2023570739502854812, guid: a02dd911db11a9743ae23c4a6c60d2a5, type: 3}
+  scaleValue: 0
 --- !u!114 &5676646901838577284
 MonoBehaviour:
   m_ObjectHideFlags: 0

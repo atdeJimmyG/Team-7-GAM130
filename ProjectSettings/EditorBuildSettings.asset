@@ -12,9 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelSelect.unity
     guid: 62b85c1d2964599488589e9855e57b30
   - enabled: 1
-    path: Assets/Scenes/Telekinesis.unity
-    guid: ff79062a812a8e2448982b2fadee731a
+    path: Assets/Scenes/T-Art.unity
+    guid: 4973a7645da6a64438882ec3f6378be6
   - enabled: 1
     path: Assets/Scenes/Fire.unity
     guid: 02ebfa9a4def1304e90162a7e4d007dd
+  - enabled: 1
+    path: Assets/Scenes/Level 3 Jacob.unity
+    guid: 1c1bf1d57faf9654aaea211be2d8d276
   m_configObjects: {}
