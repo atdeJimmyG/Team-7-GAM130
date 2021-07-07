@@ -1,0 +1,30 @@
+fileFormatVersion: 2
+guid: e065831804838734ba6f53ff641d8c43
+ScriptedImporter:
+  fileIDToRecycleName:
+    11400000: <root>
+    11400002: Player/OpenRadialMenu
+    11400004: Player/Movement
+    11400006: Player/Look
+    11400008: Player/Movement Gamepad
+    11400010: Player/Jump
+    11400012: Player/Sprint
+    11400014: Player/Primary
+    11400016: Player/Secondary
+    11400018: Player/Intract
+    11400020: Player/Crouch
+    11400022: Player/Pause
+    11400026: Player/UIconfirmation
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: e2fdc6edf8744b38b702a2a5ee3541b2, type: 3}
+  generateWrapperCode: 1
+  wrapperCodePath: 
+  wrapperClassName: 
+  wrapperCodeNamespace: 
+  generateActionEvents: 0
+  generateInterfaces: 0
+  actionGuids: []
+  actionMapGuids: []

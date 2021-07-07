@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - PlayerStart
+  - Block
+  - Fire
+  - SceneFader
+  - Scale
+  - Freezable
+  - Ice
+  - Destructable
+  - Explosion
+  - Burnable
   layers:
   - Default
   - TransparentFX
@@ -13,7 +23,7 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
+  - 
   - 
   - 
   - 
